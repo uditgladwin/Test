@@ -1,0 +1,12 @@
+data:
+  base_dir: ./data
+  scenarios_dir: ./data/scenarios
+  exports_dir: ./data/exports
+  timezone: UTC
+logging:
+  level: INFO
+  directory: ./logs
+  file_name: course_scheduler.log
+cli:
+  autosave_on_exit: true
+  default_format: json
