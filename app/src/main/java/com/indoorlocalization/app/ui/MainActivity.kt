@@ -100,9 +100,7 @@ class MainActivity : AppCompatActivity() {
     private fun getRequiredPermissions(): Array<String> {
         val permissions = mutableListOf(
             Manifest.permission.ACCESS_FINE_LOCATION,
-            Manifest.permission.ACCESS_COARSE_LOCATION,
-            Manifest.permission.ACCESS_WIFI_STATE,
-            Manifest.permission.CHANGE_WIFI_STATE
+            Manifest.permission.ACCESS_COARSE_LOCATION
         )
         
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -120,14 +118,20 @@ class MainActivity : AppCompatActivity() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         
         if (requestCode == PERMISSION_REQUEST_CODE) {
-            if (grantResults.all { it == PackageManager.PERMISSION_GRANTED }) {
-                Toast.makeText(this, "Permissions granted", Toast.LENGTH_SHORT).show()
+            if (grantResults.isNotEmpty() && grantResults.all { it == PackageManager.PERMISSION_GRANTED }) {
+                Toast.makeText(this, "All permissions granted", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(
-                    this,
-                    "Permissions are required for this app to work",
-                    Toast.LENGTH_LONG
-                ).show()
+                val deniedPermissions = permissions.filterIndexed { index, _ ->
+                    grantResults.getOrNull(index) != PackageManager.PERMISSION_GRANTED
+                }
+                
+                if (deniedPermissions.isNotEmpty()) {
+                    Toast.makeText(
+                        this,
+                        "Location and Wi-Fi permissions are required for indoor localization",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
             }
         }
     }
