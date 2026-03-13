@@ -6,6 +6,7 @@ import { TableAction } from '../models/table-action.model';
 @Component({
   selector: 'clarius-table',
   templateUrl: './clarius-table.component.html',
+  styleUrls: ['./clarius-table.component.css'],
 })
 export class ClariusTableComponent {
   @Input() rows: any[] = [];

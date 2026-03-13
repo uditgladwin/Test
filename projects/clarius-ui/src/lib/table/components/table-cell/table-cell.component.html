@@ -4,7 +4,9 @@
     {{ row[column.key] }}
   </span>
 
-  <span *ngSwitchCase="'status'" class="clarius-table-status">
+  <span *ngSwitchCase="'status'" class="clarius-table-status"
+    [style.color]="column.color ? column.color(row) : null"
+    [style.background-color]="column.color ? column.color(row) + '1a' : null">
     {{ row[column.key] }}
   </span>
 

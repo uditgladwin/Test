@@ -13,7 +13,18 @@ export class AppComponent {
     { key: 'name', label: 'Name', type: 'text' },
     { key: 'hubAddress', label: 'Hub Address', type: 'text' },
     { key: 'application', label: 'Application', type: 'text' },
-    { key: 'availability', label: 'Availability', type: 'status' },
+    {
+      key: 'availability',
+      label: 'Availability',
+      type: 'status',
+      color: (row: any) => {
+        const val = row['availability'];
+        if (val === 'Available') return '#16a34a';
+        if (val && val.startsWith('Occupied')) return '#dc2626';
+        if (val === 'In Use') return '#ea580c';
+        return '#666';
+      }
+    },
     {
       key: 'actions',
       label: 'Action',

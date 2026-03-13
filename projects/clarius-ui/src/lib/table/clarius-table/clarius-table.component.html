@@ -3,7 +3,8 @@
   <div class="clarius-table-header">
     <div
       *ngFor="let column of columns"
-      class="clarius-table-header-cell">
+      class="clarius-table-header-cell"
+      [style.flex]="column.width ? '0 0 ' + column.width : '1'">
       {{ column.label }}
     </div>
   </div>
@@ -17,7 +18,8 @@
 
       <div
         *ngFor="let column of columns"
-        class="clarius-table-cell">
+        class="clarius-table-cell"
+        [style.flex]="column.width ? '0 0 ' + column.width : '1'">
 
         <clarius-table-cell
           [row]="row"

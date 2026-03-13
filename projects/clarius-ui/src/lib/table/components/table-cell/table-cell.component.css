@@ -1,0 +1,59 @@
+:host {
+  display: contents;
+}
+
+.clarius-table-status {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.clarius-table-icon {
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.clarius-table-avatar {
+  display: inline-flex;
+  align-items: center;
+}
+
+.clarius-table-avatar img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.clarius-table-progress {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.clarius-table-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.clarius-table-actions button {
+  padding: 6px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.clarius-table-actions button:hover {
+  background: #f0f0f0;
+  border-color: #999;
+}

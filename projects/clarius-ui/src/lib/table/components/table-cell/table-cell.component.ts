@@ -5,6 +5,7 @@ import { TableAction } from '../../models/table-action.model';
 @Component({
   selector: 'clarius-table-cell',
   templateUrl: './table-cell.component.html',
+  styleUrls: ['./table-cell.component.css'],
 })
 export class TableCellComponent {
   @Input() column!: TableColumn;
