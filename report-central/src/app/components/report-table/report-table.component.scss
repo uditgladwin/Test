@@ -1,0 +1,276 @@
+.report-content {
+  margin-left: 280px;
+  margin-top: 48px;
+  padding: 0;
+  min-height: calc(100vh - 48px);
+  background: #fafafa;
+}
+
+.report-header {
+  padding: 16px 24px 0;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.breadcrumb-parent {
+  font-size: 12px;
+  color: #888;
+}
+
+.page-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+}
+
+.report-info {
+  padding: 20px 24px 0;
+}
+
+.report-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  margin: 0 0 4px;
+}
+
+.report-description {
+  font-size: 13px;
+  color: #888;
+  margin: 0;
+}
+
+.report-tabs {
+  display: flex;
+  gap: 0;
+  padding: 16px 24px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 8px 16px;
+  font-size: 13px;
+  color: #888;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  transition: all 0.2s;
+
+  &:hover {
+    color: #555;
+  }
+
+  &.active {
+    color: #222;
+    font-weight: 600;
+    border-bottom-color: #1a1a2e;
+  }
+}
+
+.tab-badge {
+  background: #e8e8e8;
+  color: #666;
+  font-size: 11px;
+  padding: 1px 8px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  gap: 16px;
+}
+
+.search-box {
+  position: relative;
+  flex: 1;
+  max-width: 520px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 12px 8px 36px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s;
+  background: #fff;
+
+  &::placeholder {
+    color: #bbb;
+  }
+
+  &:focus {
+    border-color: #999;
+  }
+}
+
+.toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.report-request-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #1a1a2e;
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+
+  &:hover {
+    background: #2a2a4e;
+  }
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.icon-action-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #eee;
+  }
+}
+
+.pagination-text {
+  font-size: 12px;
+  color: #666;
+  white-space: nowrap;
+  margin: 0 4px;
+}
+
+.table-container {
+  padding: 0 24px 24px;
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.section-header {
+  font-size: 11px;
+  font-weight: 600;
+  color: #888;
+  letter-spacing: 0.5px;
+  text-align: left;
+  padding: 12px 16px 4px;
+  border-bottom: none;
+  background: #fff;
+}
+
+.section-header-right {
+  border-left: 1px solid #eee;
+}
+
+.report-table th {
+  text-align: left;
+  padding: 10px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+}
+
+.report-table td {
+  padding: 14px 16px;
+  font-size: 13px;
+  color: #444;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.table-row {
+  transition: background 0.15s;
+
+  &:hover {
+    background: #f9f9f9;
+  }
+}
+
+.col-request-id {
+  width: 18%;
+}
+
+.col-generation-time {
+  width: 30%;
+}
+
+.col-period {
+  width: 24%;
+}
+
+.col-status {
+  width: 28%;
+  border-left: 1px solid #eee;
+}
+
+.status-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.status-text {
+  font-size: 13px;
+  color: #888;
+}
+
+.ready-text {
+  color: #2e7d32;
+  font-weight: 500;
+}
