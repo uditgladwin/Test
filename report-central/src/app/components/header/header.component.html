@@ -1,0 +1,44 @@
+<header class="header">
+  <div class="header-left">
+    <div class="logo">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <path d="M14 0C6.268 0 0 6.268 0 14s6.268 14 14 14 14-6.268 14-14S21.732 0 14 0z" fill="#00C853"/>
+        <path d="M8 10l4-4 4 4 4-4" stroke="white" stroke-width="2" fill="none"/>
+        <path d="M8 18l4-4 4 4 4-4" stroke="white" stroke-width="2" fill="none"/>
+      </svg>
+      <span class="logo-text">netradyne</span>
+      <span class="logo-badge">IDMS</span>
+    </div>
+    <div class="header-divider"></div>
+    <span class="header-date">24 June, 2021 at 8:05:06 AM PDT</span>
+  </div>
+
+  <div class="header-center">
+    <nav class="category-nav" *ngIf="activeCategory$ | async as activeCategory">
+      <button
+        *ngFor="let cat of categories"
+        class="category-btn"
+        [class.active]="cat === activeCategory"
+        (click)="setCategory(cat)">
+        {{ cat }}
+      </button>
+    </nav>
+  </div>
+
+  <div class="header-right">
+    <button class="icon-btn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+        <line x1="12" y1="17" x2="12.01" y2="17"/>
+      </svg>
+    </button>
+    <div class="header-divider-light"></div>
+    <button class="icon-btn avatar-btn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+      </svg>
+    </button>
+  </div>
+</header>

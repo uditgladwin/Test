@@ -1,0 +1,114 @@
+<div class="report-content">
+  <div class="report-header">
+    <div class="breadcrumb">
+      <span class="breadcrumb-parent">IDMS /</span>
+      <h1 class="page-title">Report Central 2.0</h1>
+    </div>
+  </div>
+
+  <div class="report-info">
+    <h2 class="report-name">All Alerts Report</h2>
+    <p class="report-description">Displays the fleet's complete list of alerts for the selected duration.</p>
+  </div>
+
+  <div class="report-tabs" *ngIf="activeReportTab$ | async as activeTab">
+    <button class="tab-btn" [class.active]="activeTab === 'one_time'" (click)="setTab('one_time')">
+      One Time Reports
+      <span class="tab-badge">{{ oneTimeCount }}</span>
+    </button>
+    <button class="tab-btn" [class.active]="activeTab === 'subscription'" (click)="setTab('subscription')">
+      Subscription Reports
+      <span class="tab-badge">{{ subscriptionCount }}</span>
+    </button>
+  </div>
+
+  <div class="toolbar">
+    <div class="search-box">
+      <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input
+        type="text"
+        class="search-input"
+        placeholder="Search Reports"
+        [(ngModel)]="searchQuery"
+        (ngModelChange)="onSearch($event)" />
+    </div>
+
+    <div class="toolbar-right">
+      <button class="report-request-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
+        </svg>
+        Report Request
+      </button>
+
+      <div class="pagination-controls" *ngIf="paginationInfo$ | async as pageInfo">
+        <button class="icon-action-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2">
+            <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+          </svg>
+        </button>
+        <button class="icon-action-btn" (click)="previousPage()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <button class="icon-action-btn" (click)="nextPage()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+        <span class="pagination-text">{{ pageInfo.start }} - {{ pageInfo.end }} out of {{ pageInfo.total }}</span>
+        <button class="icon-action-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2">
+            <circle cx="12" cy="5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="12" cy="19" r="1"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-container">
+    <table class="report-table">
+      <thead>
+        <tr>
+          <th colspan="3" class="section-header">REPORT DETAILS</th>
+          <th class="section-header section-header-right">STATUS &amp; ACTIONS</th>
+        </tr>
+        <tr>
+          <th class="col-request-id">Request ID</th>
+          <th class="col-generation-time">Report Generation Time</th>
+          <th class="col-period">Report Period</th>
+          <th class="col-status">Status &amp; Actions</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="filteredReports$ | async as reports">
+        <tr *ngFor="let report of reports" class="table-row">
+          <td class="col-request-id">{{ report.requestId }}</td>
+          <td class="col-generation-time">{{ report.reportGenerationTime }}</td>
+          <td class="col-period">{{ report.reportPeriod }}</td>
+          <td class="col-status">
+            <div class="status-cell" [class.ready]="report.status === 'ready'" [class.in-progress]="report.status === 'in_progress'">
+              <div class="status-icon" *ngIf="report.status === 'in_progress'">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="10" stroke="#ccc" stroke-width="2"/>
+                  <path d="M12 2a10 10 0 0 1 10 10" stroke="#999" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="status-icon" *ngIf="report.status === 'ready'">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="10" stroke="#4caf50" stroke-width="2"/>
+                  <path d="M8 12l3 3 5-5" stroke="#4caf50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <span class="status-text" [class.ready-text]="report.status === 'ready'">
+                {{ report.status === 'in_progress' ? 'Report Generation in Progress' : 'Ready for Download' }}
+              </span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
