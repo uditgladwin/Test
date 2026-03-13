@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TableColumn } from '../../models/table-column.model';
+import { TableAction } from '../../models/table-action.model';
 
 @Component({
   selector: 'clarius-table-row',
@@ -8,4 +9,6 @@ import { TableColumn } from '../../models/table-column.model';
 export class TableRowComponent {
   @Input() row: any;
   @Input() columns: TableColumn[] = [];
+
+  @Output() actionClicked = new EventEmitter<TableAction>();
 }

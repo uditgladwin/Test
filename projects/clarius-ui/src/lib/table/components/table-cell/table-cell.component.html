@@ -20,7 +20,7 @@
 
   <!-- Actions -->
   <span *ngSwitchCase="'actions'" class="clarius-table-actions">
-    <button *ngFor="let action of column.actions">
+    <button *ngFor="let action of column.actions" (click)="actionClicked.emit(action)">
       {{ action.label }}
     </button>
   </span>

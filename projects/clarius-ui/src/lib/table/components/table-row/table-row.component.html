@@ -2,6 +2,7 @@
   <clarius-table-cell
     *ngFor="let column of columns"
     [column]="column"
-    [row]="row">
+    [row]="row"
+    (actionClicked)="actionClicked.emit($event)">
   </clarius-table-cell>
 </div>

@@ -4,6 +4,8 @@
   <clarius-table-row
     *ngFor="let row of rows"
     [row]="row"
-    [columns]="columns">
+    [columns]="columns"
+    (click)="rowClicked.emit(row)"
+    (actionClicked)="actionClicked.emit({ action: $event, row: row })">
   </clarius-table-row>
 </div>
