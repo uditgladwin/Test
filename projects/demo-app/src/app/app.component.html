@@ -1,0 +1,9 @@
+<h1>{{ title }}</h1>
+
+<clarius-table
+  [columns]="columns"
+  [rows]="rows"
+  [config]="config"
+  (rowClicked)="onRowClicked($event)"
+  (actionClicked)="onActionClicked($event)">
+</clarius-table>
