@@ -1,9 +1,39 @@
 <h1>{{ title }}</h1>
+<p class="subtitle">One component, three different tables. Same &lt;clarius-table&gt;, different configurations.</p>
 
-<clarius-table
-  [columns]="columns"
-  [rows]="rows"
-  [config]="config"
-  (rowClicked)="onRowClicked($event)"
-  (actionClicked)="onActionClicked($event)">
-</clarius-table>
+<section>
+  <h2>1. Testbench Management</h2>
+  <p class="description">5 columns &middot; status badges with color callback &middot; Modify / Delete actions</p>
+  <clarius-table
+    [columns]="testbenchColumns"
+    [rows]="testbenchRows"
+    [config]="config"
+    (rowClicked)="onRowClicked('Testbench', $event)"
+    (actionClicked)="onActionClicked('Testbench', $event)">
+  </clarius-table>
+</section>
+
+<section>
+  <h2>2. Test Reports</h2>
+  <p class="description">6 columns &middot; progress % column &middot; custom column widths &middot; View / Export actions &middot; different status colors</p>
+  <clarius-table
+    [columns]="reportColumns"
+    [rows]="reportRows"
+    [config]="config"
+    (rowClicked)="onRowClicked('Reports', $event)"
+    (actionClicked)="onActionClicked('Reports', $event)">
+  </clarius-table>
+</section>
+
+<section>
+  <h2>3. Instrument Service</h2>
+  <p class="description">7 columns &middot; custom widths on Last Validated &amp; Actions &middot; three status colors &middot; Refresh / Export actions</p>
+  <clarius-table
+    [columns]="instrumentColumns"
+    [rows]="instrumentRows"
+    [config]="config"
+    (rowClicked)="onRowClicked('Instruments', $event)"
+    (actionClicked)="onActionClicked('Instruments', $event)">
+  </clarius-table>
+</section>
+
