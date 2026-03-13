@@ -1,0 +1,9 @@
+<div class="clarius-table">
+  <clarius-table-header [columns]="columns"></clarius-table-header>
+
+  <clarius-table-row
+    *ngFor="let row of rows"
+    [row]="row"
+    [columns]="columns">
+  </clarius-table-row>
+</div>

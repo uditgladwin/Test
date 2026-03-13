@@ -1,0 +1,37 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "cli": {
+    "packageManager": "npm",
+    "analytics": false
+  },
+  "newProjectRoot": "projects",
+  "projects": {
+    "clarius-ui": {
+      "projectType": "library",
+      "root": "projects/clarius-ui",
+      "sourceRoot": "projects/clarius-ui/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/clarius-ui/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/clarius-ui/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/clarius-ui/tsconfig.spec.json"
+          }
+        }
+      }
+    }
+  }
+}
