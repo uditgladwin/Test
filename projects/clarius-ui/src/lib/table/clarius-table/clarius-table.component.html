@@ -1,11 +1,34 @@
 <div class="clarius-table">
-  <clarius-table-header [columns]="columns"></clarius-table-header>
 
-  <clarius-table-row
-    *ngFor="let row of rows"
-    [row]="row"
-    [columns]="columns"
-    (click)="rowClicked.emit(row)"
-    (actionClicked)="actionClicked.emit({ action: $event, row: row })">
-  </clarius-table-row>
+  <div class="clarius-table-header">
+    <div
+      *ngFor="let column of columns"
+      class="clarius-table-header-cell">
+      {{ column.label }}
+    </div>
+  </div>
+
+  <div class="clarius-table-body">
+
+    <div
+      *ngFor="let row of rows"
+      class="clarius-table-row"
+      (click)="rowClicked.emit(row)">
+
+      <div
+        *ngFor="let column of columns"
+        class="clarius-table-cell">
+
+        <clarius-table-cell
+          [row]="row"
+          [column]="column"
+          (actionClicked)="actionClicked.emit({ action: $event, row: row })">
+        </clarius-table-cell>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </div>

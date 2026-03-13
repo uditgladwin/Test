@@ -1,36 +1,33 @@
-<div class="clarius-table-cell" [ngSwitch]="column.type">
+<div [ngSwitch]="column.type">
 
-  <!-- Text (default) -->
-  <span *ngSwitchCase="'text'">{{ row[column.key] }}</span>
+  <span *ngSwitchCase="'text'">
+    {{ row[column.key] }}
+  </span>
 
-  <!-- Status badge -->
   <span *ngSwitchCase="'status'" class="clarius-table-status">
     {{ row[column.key] }}
   </span>
 
-  <!-- Icon -->
   <span *ngSwitchCase="'icon'" class="clarius-table-icon">
-    <i *ngIf="column.icon">{{ column.icon(row) }}</i>
+    {{ column.icon ? column.icon(row) : row[column.key] }}
   </span>
 
-  <!-- Avatar -->
   <span *ngSwitchCase="'avatar'" class="clarius-table-avatar">
     <img *ngIf="row[column.key]" [src]="row[column.key]" alt="avatar" />
   </span>
 
-  <!-- Actions -->
-  <span *ngSwitchCase="'actions'" class="clarius-table-actions">
+  <span *ngSwitchCase="'progress'" class="clarius-table-progress">
+    {{ row[column.key] }}%
+  </span>
+
+  <div *ngSwitchCase="'actions'" class="clarius-table-actions">
     <button *ngFor="let action of column.actions" (click)="actionClicked.emit(action)">
       {{ action.label }}
     </button>
-  </span>
+  </div>
 
-  <!-- Progress -->
-  <span *ngSwitchCase="'progress'" class="clarius-table-progress">
+  <span *ngSwitchDefault>
     {{ row[column.key] }}
   </span>
-
-  <!-- Default fallback to text -->
-  <span *ngSwitchDefault>{{ row[column.key] }}</span>
 
 </div>

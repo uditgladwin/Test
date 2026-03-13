@@ -10,28 +10,27 @@ export class AppComponent {
   title = 'Clarius Table Demo';
 
   columns: TableColumn[] = [
-    { key: 'avatar', label: '', type: 'avatar', width: '50px' },
     { key: 'name', label: 'Name', type: 'text' },
-    { key: 'email', label: 'Email', type: 'text' },
-    { key: 'status', label: 'Status', type: 'status' },
-    { key: 'progress', label: 'Progress', type: 'progress' },
+    { key: 'hubAddress', label: 'Hub Address', type: 'text' },
+    { key: 'application', label: 'Application', type: 'text' },
+    { key: 'availability', label: 'Availability', type: 'status' },
     {
       key: 'actions',
-      label: 'Actions',
+      label: 'Action',
       type: 'actions',
       actions: [
-        { id: 'edit', label: 'Edit', icon: 'edit' },
-        { id: 'delete', label: 'Delete', icon: 'delete' }
+        { id: 'modify', label: 'Modify' },
+        { id: 'delete', label: 'Delete' }
       ]
     }
   ];
 
   rows = [
-    { avatar: 'https://i.pravatar.cc/40?img=1', name: 'Alice Johnson', email: 'alice@example.com', status: 'Active', progress: '85%' },
-    { avatar: 'https://i.pravatar.cc/40?img=2', name: 'Bob Smith', email: 'bob@example.com', status: 'Inactive', progress: '40%' },
-    { avatar: 'https://i.pravatar.cc/40?img=3', name: 'Carol Lee', email: 'carol@example.com', status: 'Active', progress: '100%' },
-    { avatar: 'https://i.pravatar.cc/40?img=4', name: 'David Park', email: 'david@example.com', status: 'Pending', progress: '10%' },
-    { avatar: 'https://i.pravatar.cc/40?img=5', name: 'Eve Martinez', email: 'eve@example.com', status: 'Active', progress: '60%' }
+    { name: 'PCI_Testbench_CEM', hubAddress: 'http://134.64.244.94.18000', application: 'PCIe', availability: 'Available' },
+    { name: 'PCI_Testbench_Base', hubAddress: 'http://134.64.244.94.18000', application: 'PCIe, USB 3', availability: 'Occupied by Amit...' },
+    { name: 'USB_Testbench', hubAddress: 'http://134.64.244.94.18000', application: 'USB 2, USB 3', availability: 'Available' },
+    { name: 'LDDR4_Testbench', hubAddress: 'http://134.64.244.94.18000', application: 'LDDR4 - Dualstack', availability: 'Available' },
+    { name: 'Testbench - 127', hubAddress: 'http://134.64.244.94.18000', application: 'PCIe 3', availability: 'Available' }
   ];
 
   config: TableConfig = {
