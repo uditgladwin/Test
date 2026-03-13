@@ -4,7 +4,6 @@ import { TableConfig } from '../models/table-config.model';
 import { TableAction } from '../models/table-action.model';
 
 @Component({
-  standalone: false,
   selector: 'clarius-table',
   templateUrl: './clarius-table.component.html',
 })

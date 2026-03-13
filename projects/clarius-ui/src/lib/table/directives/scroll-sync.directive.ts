@@ -1,7 +1,6 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  standalone: false,
   selector: '[clariusScrollSync]',
 })
 export class ScrollSyncDirective {
