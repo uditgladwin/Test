@@ -7,58 +7,141 @@ import { TableColumn, TableConfig } from 'clarius-ui';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Clarius Table Demo';
+  title = 'Clarius Table — Component Showcase';
+
+  config: TableConfig = {};
 
   // ──────────────────────────────────────────────
-  // TABLE 1: Testbench Management
-  // Shows: text columns, status badges with color callback, action buttons
+  // 1. TEXT — plain text rendering
   // ──────────────────────────────────────────────
 
-  testbenchColumns: TableColumn[] = [
+  textColumns: TableColumn[] = [
     { key: 'name', label: 'Name', type: 'text' },
-    { key: 'hubAddress', label: 'Hub Address', type: 'text' },
-    { key: 'application', label: 'Application', type: 'text' },
+    { key: 'email', label: 'Email', type: 'text' },
+    { key: 'role', label: 'Role', type: 'text' }
+  ];
+
+  textRows = [
+    { name: 'Alice Johnson', email: 'alice@clarius.io', role: 'Engineer' },
+    { name: 'Bob Smith', email: 'bob@clarius.io', role: 'Manager' },
+    { name: 'Carol Davis', email: 'carol@clarius.io', role: 'Designer' }
+  ];
+
+  // ──────────────────────────────────────────────
+  // 2. STATUS — colored badge pills via color callback
+  // ──────────────────────────────────────────────
+
+  statusColumns: TableColumn[] = [
+    { key: 'device', label: 'Device', type: 'text' },
     {
-      key: 'availability',
-      label: 'Availability',
+      key: 'status',
+      label: 'Status',
       type: 'status',
       color: (row: any) => {
-        const val = row['availability'];
-        if (val === 'Available') return '#16a34a';
-        if (val && val.startsWith('Occupied')) return '#dc2626';
-        if (val === 'In Use') return '#ea580c';
+        const val = row['status'];
+        if (val === 'Online') return '#16a34a';
+        if (val === 'Offline') return '#dc2626';
+        if (val === 'Standby') return '#ea580c';
         return '#666';
       }
-    },
+    }
+  ];
+
+  statusRows = [
+    { device: 'Server Alpha', status: 'Online' },
+    { device: 'Server Beta', status: 'Offline' },
+    { device: 'Server Gamma', status: 'Standby' },
+    { device: 'Server Delta', status: 'Online' }
+  ];
+
+  // ──────────────────────────────────────────────
+  // 3. PROGRESS — renders value with % suffix
+  // ──────────────────────────────────────────────
+
+  progressColumns: TableColumn[] = [
+    { key: 'task', label: 'Task', type: 'text' },
+    { key: 'progress', label: 'Completion', type: 'progress' }
+  ];
+
+  progressRows = [
+    { task: 'PCIe Compliance Test', progress: 100 },
+    { task: 'USB Signal Integrity', progress: 67 },
+    { task: 'DDR4 Validation', progress: 45 },
+    { task: 'Display Port Calibration', progress: 12 }
+  ];
+
+  // ──────────────────────────────────────────────
+  // 4. ACTIONS — rendered as outlined buttons
+  // ──────────────────────────────────────────────
+
+  actionsColumns: TableColumn[] = [
+    { key: 'name', label: 'Item', type: 'text' },
     {
       key: 'actions',
-      label: 'Action',
+      label: 'Actions',
       type: 'actions',
       actions: [
-        { id: 'modify', label: 'Modify' },
+        { id: 'view', label: 'View' },
+        { id: 'edit', label: 'Edit' },
         { id: 'delete', label: 'Delete' }
       ]
     }
   ];
 
-  testbenchRows = [
-    { name: 'PCI_Testbench_CEM', hubAddress: 'http://134.64.244.94:18000', application: 'PCIe', availability: 'Available' },
-    { name: 'PCI_Testbench_Base', hubAddress: 'http://134.64.244.94:18000', application: 'PCIe, USB 3', availability: 'Occupied by Amit...' },
-    { name: 'USB_Testbench', hubAddress: 'http://134.64.244.94:18000', application: 'USB 2, USB 3', availability: 'Available' },
-    { name: 'LDDR4_Testbench', hubAddress: 'http://134.64.244.94:18000', application: 'LDDR4 - Dualstack', availability: 'Available' },
-    { name: 'Testbench - 127', hubAddress: 'http://134.64.244.94:18000', application: 'PCIe 3', availability: 'Available' }
+  actionsRows = [
+    { name: 'Report #341' },
+    { name: 'Report #342' },
+    { name: 'Report #343' }
   ];
 
   // ──────────────────────────────────────────────
-  // TABLE 2: Test Reports
-  // Shows: different columns, different actions (View/Export), progress column
-  // Same <clarius-table> component, completely different data & layout
+  // 5. AVATAR — circular image from URL
   // ──────────────────────────────────────────────
 
-  reportColumns: TableColumn[] = [
-    { key: 'reportId', label: 'Report ID', type: 'text', width: '100px' },
-    { key: 'testName', label: 'Test Name', type: 'text' },
-    { key: 'applications', label: 'Applications', type: 'text' },
+  avatarColumns: TableColumn[] = [
+    { key: 'avatar', label: 'Photo', type: 'avatar', width: '80px' },
+    { key: 'name', label: 'Name', type: 'text' },
+    { key: 'department', label: 'Department', type: 'text' }
+  ];
+
+  avatarRows = [
+    { avatar: 'https://i.pravatar.cc/64?img=1', name: 'Alice Johnson', department: 'Engineering' },
+    { avatar: 'https://i.pravatar.cc/64?img=2', name: 'Bob Smith', department: 'Design' },
+    { avatar: 'https://i.pravatar.cc/64?img=3', name: 'Carol Davis', department: 'QA' }
+  ];
+
+  // ──────────────────────────────────────────────
+  // 6. ICON — renders via column.icon callback
+  // ──────────────────────────────────────────────
+
+  iconColumns: TableColumn[] = [
+    {
+      key: 'icon',
+      label: 'Type',
+      type: 'icon',
+      width: '60px',
+      icon: (row: any) => {
+        const map: Record<string, string> = { file: '📄', folder: '📁', image: '🖼️' };
+        return map[row['kind']] || '❓';
+      }
+    },
+    { key: 'name', label: 'Name', type: 'text' },
+    { key: 'size', label: 'Size', type: 'text' }
+  ];
+
+  iconRows = [
+    { kind: 'file', name: 'report.pdf', size: '2.4 MB' },
+    { kind: 'folder', name: 'test-results', size: '—' },
+    { kind: 'image', name: 'screenshot.png', size: '1.1 MB' }
+  ];
+
+  // ──────────────────────────────────────────────
+  // 7. COMBINED — all types in one table
+  // ──────────────────────────────────────────────
+
+  combinedColumns: TableColumn[] = [
+    { key: 'avatar', label: '', type: 'avatar', width: '60px' },
+    { key: 'name', label: 'Name', type: 'text' },
     { key: 'progress', label: 'Progress', type: 'progress', width: '100px' },
     {
       key: 'status',
@@ -74,7 +157,7 @@ export class AppComponent {
     },
     {
       key: 'actions',
-      label: '',
+      label: 'Actions',
       type: 'actions',
       actions: [
         { id: 'view', label: 'View' },
@@ -83,65 +166,15 @@ export class AppComponent {
     }
   ];
 
-  reportRows = [
-    { reportId: '341', testName: 'Dell XCQ - 12', applications: 'LDDR4, USB, PCIe', progress: 100, status: 'Passed' },
-    { reportId: '342', testName: 'Intel ZBoard - 5', applications: 'PCIe 3, USB 3', progress: 67, status: 'Running' },
-    { reportId: '343', testName: 'AMD Versal - 8', applications: 'LDDR4', progress: 100, status: 'Failed' },
-    { reportId: '344', testName: 'Xilinx KCU - 3', applications: 'USB 2, USB 3, PCIe', progress: 45, status: 'Running' }
+  combinedRows = [
+    { avatar: 'https://i.pravatar.cc/64?img=10', name: 'Dell XCQ - 12', progress: 100, status: 'Passed' },
+    { avatar: 'https://i.pravatar.cc/64?img=11', name: 'Intel ZBoard - 5', progress: 67, status: 'Running' },
+    { avatar: 'https://i.pravatar.cc/64?img=12', name: 'AMD Versal - 8', progress: 100, status: 'Failed' }
   ];
 
   // ──────────────────────────────────────────────
-  // TABLE 3: Instruments
-  // Shows: more columns, different status values, custom widths
-  // Demonstrates how the same component adapts to any data shape
+  // Event handlers
   // ──────────────────────────────────────────────
-
-  instrumentColumns: TableColumn[] = [
-    { key: 'name', label: 'Name', type: 'text' },
-    { key: 'address', label: 'Service Address', type: 'text' },
-    { key: 'technology', label: 'Technologies', type: 'text' },
-    { key: 'application', label: 'Applications', type: 'text' },
-    {
-      key: 'connectivity',
-      label: 'Connectivity',
-      type: 'status',
-      color: (row: any) => {
-        const val = row['connectivity'];
-        if (val === 'Available') return '#16a34a';
-        if (val === 'Unavailable') return '#dc2626';
-        if (val === 'In Use') return '#ea580c';
-        return '#666';
-      }
-    },
-    { key: 'lastValidated', label: 'Last Validated', type: 'text', width: '130px' },
-    {
-      key: 'actions',
-      label: 'Actions',
-      type: 'actions',
-      width: '180px',
-      actions: [
-        { id: 'refresh', label: 'Refresh' },
-        { id: 'export', label: 'Export' }
-      ]
-    }
-  ];
-
-  instrumentRows = [
-    { name: 'Recorded test bench 777', address: '134.64.244.94:18000', technology: '-', application: '-', connectivity: 'Available', lastValidated: 'NA' },
-    { name: 'PCI_Testbench_Base', address: '134.64.244.94:18000', technology: 'Tx PCIe Base...', application: 'Tx PCIe Base...', connectivity: 'Unavailable', lastValidated: '2 months ago' },
-    { name: 'USB_Testbench', address: '134.64.244.94:18000', technology: 'Tx Display Port...', application: 'Tx Display Po...', connectivity: 'In Use', lastValidated: 'Not Validated' },
-    { name: 'LDDR4_Testbench', address: '134.64.244.94:18000', technology: 'Tx USB', application: 'Tx USB Gen...', connectivity: 'Available', lastValidated: '3 days ago' }
-  ];
-
-  // ──────────────────────────────────────────────
-  // Shared config & event handlers
-  // ──────────────────────────────────────────────
-
-  config: TableConfig = {
-    selectable: false,
-    pagination: false,
-    stickyHeader: true
-  };
 
   onRowClicked(tableName: string, row: any): void {
     console.log(`[${tableName}] Row clicked:`, row);
