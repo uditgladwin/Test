@@ -85,6 +85,22 @@
   opacity: 1;
 }
 
+/* Status dots (Variant 4) */
+
+.status-dot-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
 /* Variant 3: gradient background */
 
 .table.gradient {

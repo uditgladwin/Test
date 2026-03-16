@@ -13,6 +13,7 @@ export class ClariusTableComponent {
   @Input() statusColors: { [value: string]: string } = {};
   @Input() showLabels = false;
   @Input() gradient = false;
+  @Input() statusDots = false;
   @Output() rowClicked = new EventEmitter<any>();
   @Output() actionClicked = new EventEmitter<{ action: string; row: any }>();
 

@@ -14,11 +14,15 @@
 
       <ng-container *ngIf="col.type === 'status'">
         <span *ngIf="showLabels" class="cell-label">{{ col.label }}</span>
-        <span class="badge"
+        <span *ngIf="!statusDots" class="badge"
           [style.color]="getStatusColor(row[col.key])"
           [style.background]="getStatusBackground(row[col.key])"
           [style.border]="getStatusBorder(row[col.key])">
           {{ row[col.key] }}
+        </span>
+        <span *ngIf="statusDots" class="status-dot-wrapper">
+          <span class="status-dot" [style.background]="getStatusColor(row[col.key])"></span>
+          <span [style.color]="getStatusColor(row[col.key])">{{ row[col.key] }}</span>
         </span>
       </ng-container>
 
