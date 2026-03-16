@@ -28,7 +28,8 @@
 
       <span *ngIf="col.type === 'actions'" class="actions">
         <ng-container *ngFor="let a of actions">
-          <span *ngIf="a.icon" class="icon-btn" (click)="onActionClick(a.id, row, $event)">{{ a.icon }}</span>
+          <img *ngIf="a.icon && a.icon.includes('/')" class="icon-btn" [src]="a.icon" (click)="onActionClick(a.id, row, $event)" />
+          <span *ngIf="a.icon && !a.icon.includes('/')" class="icon-btn" (click)="onActionClick(a.id, row, $event)">{{ a.icon }}</span>
           <button *ngIf="!a.icon && !a.primary" (click)="onActionClick(a.id, row, $event)">{{ a.label }}</button>
           <button *ngIf="!a.icon && a.primary" class="primary" (click)="onActionClick(a.id, row, $event)">{{ a.label }}</button>
         </ng-container>

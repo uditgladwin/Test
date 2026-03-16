@@ -68,8 +68,8 @@ export class AppComponent {
 
   servicesStatusColors = { 'Available': '#00B35D', 'Unavailable': '#FF3B30', 'In Use': '#FFD600' };
   servicesActions = [
-    { id: 'sync', label: '', icon: '\u21BB' },
-    { id: 'edit', label: '', icon: '\u270E' },
+    { id: 'validate', label: '', icon: 'assets/icons/validate.png' },
+    { id: 'edit', label: '', icon: 'assets/icons/edit.png' },
     { id: 'menu', label: '', icon: '\u22EE' }
   ];
 
@@ -92,7 +92,7 @@ export class AppComponent {
   ];
 
   reportActions = [
-    { id: 'delete', label: '', icon: '\uD83D\uDDD1' },
+    { id: 'delete', label: '', icon: 'assets/icons/delete.png' },
     { id: 'view', label: 'View' },
     { id: 'export', label: 'Export', primary: true }
   ];
