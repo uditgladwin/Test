@@ -10,8 +10,13 @@ export class ClariusTableComponent {
   @Input() columns: TableColumn[] = [];
   @Input() rows: any[] = [];
   @Input() actions: TableAction[] = [];
+  @Input() statusColors: { [value: string]: string } = {};
   @Output() rowClicked = new EventEmitter<any>();
   @Output() actionClicked = new EventEmitter<{ action: string; row: any }>();
+
+  getStatusColor(value: string): string {
+    return this.statusColors[value] || '#FFFFFF';
+  }
 
   onActionClick(actionId: string, row: any, event: MouseEvent) {
     event.stopPropagation();

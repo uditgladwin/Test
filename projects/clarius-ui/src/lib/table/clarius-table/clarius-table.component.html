@@ -9,10 +9,15 @@
 
       <span *ngIf="!col.type || col.type === 'text'">{{ row[col.key] }}</span>
 
-      <span *ngIf="col.type === 'status'" class="badge">{{ row[col.key] }}</span>
+      <span *ngIf="col.type === 'status'" [style.color]="getStatusColor(row[col.key])">
+        {{ row[col.key] }}
+      </span>
 
       <span *ngIf="col.type === 'actions'" class="actions">
-        <button *ngFor="let a of actions" (click)="onActionClick(a.id, row, $event)">{{ a.label }}</button>
+        <ng-container *ngFor="let a of actions">
+          <span *ngIf="a.icon" class="icon-btn" (click)="onActionClick(a.id, row, $event)">{{ a.icon }}</span>
+          <button *ngIf="!a.icon" (click)="onActionClick(a.id, row, $event)">{{ a.label }}</button>
+        </ng-container>
       </span>
 
     </div>
