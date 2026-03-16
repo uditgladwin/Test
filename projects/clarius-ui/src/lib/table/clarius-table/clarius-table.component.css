@@ -56,22 +56,8 @@
   gap: 12px;
 }
 
-.actions button {
-  width: 118px;
-  height: 40px;
-  border: 1px solid #007B94;
-  border-radius: 20px;
-  background: transparent;
-  color: #FFFFFF;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.actions button:hover {
-  background: rgba(0, 123, 148, 0.15);
+.actions clarius-button {
+  display: inline-block;
 }
 
 .icon-btn {
@@ -127,13 +113,19 @@
   color: #F0F0F0;
 }
 
-/* Primary action button */
+/* Checkbox */
 
-.actions button.primary {
-  background: #004C5C;
-  border: 1px solid #33BAEA;
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #007B94;
 }
 
-.actions button.primary:hover {
-  background: #005d70;
+/* Border gradient variant */
+
+.table.border-gradient {
+  border: 1px solid transparent;
+  border-image-source: linear-gradient(180deg, rgba(56, 56, 56, 0) 0%, #222222 100%);
+  border-image-slice: 1;
 }

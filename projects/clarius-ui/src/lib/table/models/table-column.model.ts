@@ -1,7 +1,8 @@
 export interface TableColumn {
   key: string;
   label: string;
-  type?: 'text' | 'status' | 'actions';
+  type?: 'text' | 'status' | 'actions' | 'checkbox';
+  textColor?: string;
 }
 
 export interface TableAction {
@@ -9,4 +10,5 @@ export interface TableAction {
   label: string;
   icon?: string;
   primary?: boolean;
+  size?: 'small' | 'large';
 }

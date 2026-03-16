@@ -41,3 +41,21 @@
   (actionClicked)="onActionClick($event)">
 </clarius-table>
 
+<h2>List of Tests (Checkbox + Status)</h2>
+<clarius-table
+  [columns]="testColumns"
+  [rows]="testRows"
+  [statusColors]="testStatusColors"
+  (rowClicked)="onRowClick($event)"
+  (selectionChanged)="onSelectionChange($event)">
+</clarius-table>
+
+<h2>Standalone Buttons</h2>
+<div class="button-demo">
+  <clarius-button label="Large" [size]="ButtonSize.Large" [state]="ButtonState.Default"></clarius-button>
+  <clarius-button label="Small" [size]="ButtonSize.Small" [state]="ButtonState.Default"></clarius-button>
+  <clarius-button label="Disabled" [size]="ButtonSize.Large" [state]="ButtonState.Disabled"></clarius-button>
+  <clarius-button label="Loading" [size]="ButtonSize.Large" [state]="ButtonState.Loading"></clarius-button>
+  <clarius-button label="With Icon" [size]="ButtonSize.Large" [iconMode]="ButtonIconMode.WithIcon" icon="directions_car" [state]="ButtonState.Default"></clarius-button>
+</div>
+

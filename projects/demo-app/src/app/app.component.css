@@ -17,3 +17,10 @@ h2 {
   font-weight: 400;
   margin: 32px 0 12px;
 }
+
+.button-demo {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}

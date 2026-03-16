@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TableColumn } from 'clarius-ui';
+import { ButtonState, ButtonSize, ButtonIconMode } from 'clarius-ui';
 
 @Component({
   selector: 'app-root',
@@ -97,6 +98,31 @@ export class AppComponent {
     { id: 'export', label: 'Export', primary: true }
   ];
 
+  // --- Table 5: List of Tests (checkbox + colored status text) ---
+
+  testColumns: TableColumn[] = [
+    { key: 'select', label: '', type: 'checkbox' },
+    { key: 'testName', label: 'Test Name' },
+    { key: 'tag', label: 'Tag' },
+    { key: 'applications', label: 'Applications' },
+    { key: 'dateAdded', label: 'Date Added' },
+    { key: 'status', label: 'Status', type: 'status' }
+  ];
+
+  testRows = [
+    { testName: 'qwrewtry', tag: 'Default', applications: 'MultiAnalysisApp2', dateAdded: 'Mar 11, 12:48:31', status: 'Failed' },
+    { testName: 'qwewtbta', tag: 'Default', applications: 'MultiAnalysisApp2', dateAdded: 'Mar 11, 12:45:42', status: 'Failed' },
+    { testName: 'efggf', tag: 'Default', applications: 'MultiAnalysisApp2', dateAdded: 'Mar 11, 12:41:59', status: 'Failed' },
+    { testName: 'wrwwewrwe', tag: 'Default', applications: 'MultiAnalysisApp2', dateAdded: 'Mar 11, 12:39:02', status: 'Failed' },
+  ];
+
+  testStatusColors = { 'Failed': '#FF3B30', 'Passed': '#00B35D' };
+
+  // Expose button enums to template
+  ButtonState = ButtonState;
+  ButtonSize = ButtonSize;
+  ButtonIconMode = ButtonIconMode;
+
   // --- Events ---
 
   onRowClick(row: any) {
@@ -105,5 +131,9 @@ export class AppComponent {
 
   onActionClick(event: any) {
     console.log('Action clicked:', event);
+  }
+
+  onSelectionChange(selected: any[]) {
+    console.log('Selection changed:', selected);
   }
 }

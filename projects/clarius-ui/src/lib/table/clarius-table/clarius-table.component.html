@@ -1,15 +1,22 @@
-<div class="table" [class.gradient]="gradient">
+<div class="table" [class.gradient]="gradient" [class.border-gradient]="borderGradient">
 
   <div class="header" *ngIf="!showLabels">
-    <div class="header-cell" *ngFor="let col of columns">{{ col.label }}</div>
+    <div class="header-cell" *ngFor="let col of columns">
+      <input *ngIf="col.type === 'checkbox'" type="checkbox" [checked]="allSelected" (click)="toggleAll($event)" />
+      <span *ngIf="col.type !== 'checkbox'">{{ col.label }}</span>
+    </div>
   </div>
 
   <div class="row" *ngFor="let row of rows" (click)="rowClicked.emit(row)">
     <div class="cell" *ngFor="let col of columns">
 
+      <ng-container *ngIf="col.type === 'checkbox'">
+        <input type="checkbox" [checked]="isSelected(row)" (click)="toggleRow(row, $event)" />
+      </ng-container>
+
       <ng-container *ngIf="!col.type || col.type === 'text'">
         <span *ngIf="showLabels" class="cell-label">{{ col.label }}</span>
-        <span>{{ row[col.key] }}</span>
+        <span [style.color]="col.textColor || ''">{{ row[col.key] }}</span>
       </ng-container>
 
       <ng-container *ngIf="col.type === 'status'">
@@ -30,8 +37,11 @@
         <ng-container *ngFor="let a of actions">
           <img *ngIf="a.icon && a.icon.includes('/')" class="icon-btn" [src]="a.icon" (click)="onActionClick(a.id, row, $event)" />
           <span *ngIf="a.icon && !a.icon.includes('/')" class="icon-btn" (click)="onActionClick(a.id, row, $event)">{{ a.icon }}</span>
-          <button *ngIf="!a.icon && !a.primary" (click)="onActionClick(a.id, row, $event)">{{ a.label }}</button>
-          <button *ngIf="!a.icon && a.primary" class="primary" (click)="onActionClick(a.id, row, $event)">{{ a.label }}</button>
+          <clarius-button *ngIf="!a.icon"
+            [label]="a.label"
+            [size]="getButtonSize(a)"
+            (buttonClick)="onActionButtonClick(a.id, row)">
+          </clarius-button>
         </ng-container>
       </span>
 
