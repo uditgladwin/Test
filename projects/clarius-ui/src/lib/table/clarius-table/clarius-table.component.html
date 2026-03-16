@@ -1,41 +1,21 @@
-<!-- the whole table -->
 <div class="table">
 
-  <!-- header row -->
   <div class="header">
-    <div class="header-cell" *ngFor="let col of columns">
-      {{ col.label }}
-    </div>
+    <div class="header-cell" *ngFor="let col of columns">{{ col.label }}</div>
   </div>
 
-  <!-- data rows -->
   <div class="row" *ngFor="let row of rows" (click)="rowClicked.emit(row)">
-
     <div class="cell" *ngFor="let col of columns">
 
-      <!-- plain text -->
-      <span *ngIf="col.type !== 'status' && col.type !== 'actions'">
-        {{ row[col.key] }}
-      </span>
+      <span *ngIf="!col.type || col.type === 'text'">{{ row[col.key] }}</span>
 
-      <!-- status badge -->
-      <span *ngIf="col.type === 'status'"
-        class="status-badge"
-        [style.color]="getStatusColor(row[col.key])"
-        [style.border-color]="getStatusColor(row[col.key])">
-        {{ row[col.key] }}
-      </span>
+      <span *ngIf="col.type === 'status'" class="badge">{{ row[col.key] }}</span>
 
-      <!-- action buttons -->
-      <span *ngIf="col.type === 'actions'" class="action-buttons">
-        <button *ngFor="let action of actions"
-          (click)="onActionClick(action.id, row, $event)">
-          {{ action.label }}
-        </button>
+      <span *ngIf="col.type === 'actions'" class="actions">
+        <button *ngFor="let a of actions" (click)="onActionClick(a.id, row, $event)">{{ a.label }}</button>
       </span>
 
     </div>
-
   </div>
 
 </div>

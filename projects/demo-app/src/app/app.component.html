@@ -5,17 +5,15 @@
   [columns]="testbenchColumns"
   [rows]="testbenchRows"
   [actions]="testbenchActions"
-  [statusColors]="testbenchStatusColors"
   (rowClicked)="onRowClick($event)"
   (actionClicked)="onActionClick($event)">
 </clarius-table>
 
-<h2>Test Reports</h2>
+<h2>Instruments</h2>
 <clarius-table
-  [columns]="reportColumns"
-  [rows]="reportRows"
-  [actions]="reportActions"
-  [statusColors]="reportStatusColors"
+  [columns]="instrumentColumns"
+  [rows]="instrumentRows"
+  [actions]="instrumentActions"
   (rowClicked)="onRowClick($event)"
   (actionClicked)="onActionClick($event)">
 </clarius-table>
