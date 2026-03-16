@@ -1,33 +1,38 @@
-<div class="clarius-table">
+<!-- the whole table -->
+<div class="table">
 
-  <div class="clarius-table-header">
-    <div
-      *ngFor="let column of columns"
-      class="clarius-table-header-cell"
-      [style.flex]="column.width ? '0 0 ' + column.width : '1'">
-      {{ column.label }}
+  <!-- header row -->
+  <div class="header">
+    <div class="header-cell" *ngFor="let col of columns">
+      {{ col.label }}
     </div>
   </div>
 
-  <div class="clarius-table-body">
+  <!-- data rows -->
+  <div class="row" *ngFor="let row of rows" (click)="rowClicked.emit(row)">
 
-    <div
-      *ngFor="let row of rows"
-      class="clarius-table-row"
-      (click)="rowClicked.emit(row)">
+    <div class="cell" *ngFor="let col of columns">
 
-      <div
-        *ngFor="let column of columns"
-        class="clarius-table-cell"
-        [style.flex]="column.width ? '0 0 ' + column.width : '1'">
+      <!-- plain text -->
+      <span *ngIf="col.type !== 'status' && col.type !== 'actions'">
+        {{ row[col.key] }}
+      </span>
 
-        <clarius-table-cell
-          [row]="row"
-          [column]="column"
-          (actionClicked)="actionClicked.emit({ action: $event, row: row })">
-        </clarius-table-cell>
+      <!-- status badge -->
+      <span *ngIf="col.type === 'status'"
+        class="status-badge"
+        [style.color]="getStatusColor(row[col.key])"
+        [style.border-color]="getStatusColor(row[col.key])">
+        {{ row[col.key] }}
+      </span>
 
-      </div>
+      <!-- action buttons -->
+      <span *ngIf="col.type === 'actions'" class="action-buttons">
+        <button *ngFor="let action of actions"
+          (click)="onActionClick(action.id, row, $event)">
+          {{ action.label }}
+        </button>
+      </span>
 
     </div>
 

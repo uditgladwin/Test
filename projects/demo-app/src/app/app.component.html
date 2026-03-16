@@ -1,82 +1,22 @@
-<h1>{{ title }}</h1>
-<p class="subtitle">Each section below renders one column type in isolation, then a combined table at the end.</p>
+<h1>Clarius Table Demo</h1>
 
-<section>
-  <h2>1. Text</h2>
-  <p class="description">type: 'text' &mdash; renders plain cell values as-is</p>
-  <clarius-table
-    [columns]="textColumns"
-    [rows]="textRows"
-    [config]="config"
-    (rowClicked)="onRowClicked('Text', $event)">
-  </clarius-table>
-</section>
+<h2>Testbench Management</h2>
+<clarius-table
+  [columns]="testbenchColumns"
+  [rows]="testbenchRows"
+  [actions]="testbenchActions"
+  [statusColors]="testbenchStatusColors"
+  (rowClicked)="onRowClick($event)"
+  (actionClicked)="onActionClick($event)">
+</clarius-table>
 
-<section>
-  <h2>2. Status</h2>
-  <p class="description">type: 'status' &mdash; colored badge pill via <code>color</code> callback (green/red/orange)</p>
-  <clarius-table
-    [columns]="statusColumns"
-    [rows]="statusRows"
-    [config]="config"
-    (rowClicked)="onRowClicked('Status', $event)">
-  </clarius-table>
-</section>
-
-<section>
-  <h2>3. Progress</h2>
-  <p class="description">type: 'progress' &mdash; appends % to the numeric value</p>
-  <clarius-table
-    [columns]="progressColumns"
-    [rows]="progressRows"
-    [config]="config"
-    (rowClicked)="onRowClicked('Progress', $event)">
-  </clarius-table>
-</section>
-
-<section>
-  <h2>4. Actions</h2>
-  <p class="description">type: 'actions' &mdash; renders outlined buttons from <code>actions[]</code> config</p>
-  <clarius-table
-    [columns]="actionsColumns"
-    [rows]="actionsRows"
-    [config]="config"
-    (rowClicked)="onRowClicked('Actions', $event)"
-    (actionClicked)="onActionClicked('Actions', $event)">
-  </clarius-table>
-</section>
-
-<section>
-  <h2>5. Avatar</h2>
-  <p class="description">type: 'avatar' &mdash; renders a circular image from <code>row[column.key]</code> URL</p>
-  <clarius-table
-    [columns]="avatarColumns"
-    [rows]="avatarRows"
-    [config]="config"
-    (rowClicked)="onRowClicked('Avatar', $event)">
-  </clarius-table>
-</section>
-
-<section>
-  <h2>6. Icon</h2>
-  <p class="description">type: 'icon' &mdash; renders via <code>column.icon(row)</code> callback function</p>
-  <clarius-table
-    [columns]="iconColumns"
-    [rows]="iconRows"
-    [config]="config"
-    (rowClicked)="onRowClicked('Icon', $event)">
-  </clarius-table>
-</section>
-
-<section class="combined">
-  <h2>7. Combined &mdash; All Types Together</h2>
-  <p class="description">avatar + text + progress + status + actions in one table</p>
-  <clarius-table
-    [columns]="combinedColumns"
-    [rows]="combinedRows"
-    [config]="config"
-    (rowClicked)="onRowClicked('Combined', $event)"
-    (actionClicked)="onActionClicked('Combined', $event)">
-  </clarius-table>
-</section>
+<h2>Test Reports</h2>
+<clarius-table
+  [columns]="reportColumns"
+  [rows]="reportRows"
+  [actions]="reportActions"
+  [statusColors]="reportStatusColors"
+  (rowClicked)="onRowClick($event)"
+  (actionClicked)="onActionClick($event)">
+</clarius-table>
 

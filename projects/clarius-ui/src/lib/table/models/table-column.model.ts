@@ -1,18 +1,12 @@
-import { TableAction } from './table-action.model';
-
+// column config - tells the table what to show
 export interface TableColumn {
   key: string;
   label: string;
-  type?:
-    | 'text'
-    | 'status'
-    | 'icon'
-    | 'avatar'
-    | 'actions'
-    | 'progress';
-  width?: string;
-  sortable?: boolean;
-  icon?: (row: any) => string;
-  color?: (row: any) => string;
-  actions?: TableAction[];
+  type?: 'text' | 'status' | 'actions';
+}
+
+// action button config
+export interface TableAction {
+  id: string;
+  label: string;
 }

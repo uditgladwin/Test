@@ -1,7 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { TableColumn } from '../models/table-column.model';
-import { TableConfig } from '../models/table-config.model';
-import { TableAction } from '../models/table-action.model';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { TableColumn, TableAction } from '../models/table-column.model';
 
 @Component({
   selector: 'clarius-table',
@@ -9,10 +7,27 @@ import { TableAction } from '../models/table-action.model';
   styleUrls: ['./clarius-table.component.css'],
 })
 export class ClariusTableComponent {
-  @Input() rows: any[] = [];
-  @Input() columns: TableColumn[] = [];
-  @Input() config?: TableConfig;
 
+  // data
+  @Input() columns: TableColumn[] = [];
+  @Input() rows: any[] = [];
+
+  // action buttons to show in the "actions" column
+  @Input() actions: TableAction[] = [];
+
+  // pass status colors like { 'Available': 'green', 'Offline': 'red' }
+  @Input() statusColors: { [value: string]: string } = {};
+
+  // events
   @Output() rowClicked = new EventEmitter<any>();
-  @Output() actionClicked = new EventEmitter<{ action: TableAction; row: any }>();
+  @Output() actionClicked = new EventEmitter<{ action: string; row: any }>();
+
+  getStatusColor(value: string): string {
+    return this.statusColors[value] || 'gray';
+  }
+
+  onActionClick(actionId: string, row: any, event: MouseEvent): void {
+    event.stopPropagation();
+    this.actionClicked.emit({ action: actionId, row: row });
+  }
 }
