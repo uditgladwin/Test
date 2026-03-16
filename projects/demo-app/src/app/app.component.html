@@ -29,3 +29,14 @@
   (actionClicked)="onActionClick($event)">
 </clarius-table>
 
+<h2>Generated Reports</h2>
+<clarius-table
+  [columns]="reportColumns"
+  [rows]="reportRows"
+  [actions]="reportActions"
+  [showLabels]="true"
+  [gradient]="true"
+  (rowClicked)="onRowClick($event)"
+  (actionClicked)="onActionClick($event)">
+</clarius-table>
+

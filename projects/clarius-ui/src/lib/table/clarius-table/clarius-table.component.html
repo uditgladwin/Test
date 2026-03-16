@@ -1,22 +1,32 @@
-<div class="table">
+<div class="table" [class.gradient]="gradient">
 
-  <div class="header">
+  <div class="header" *ngIf="!showLabels">
     <div class="header-cell" *ngFor="let col of columns">{{ col.label }}</div>
   </div>
 
   <div class="row" *ngFor="let row of rows" (click)="rowClicked.emit(row)">
     <div class="cell" *ngFor="let col of columns">
 
-      <span *ngIf="!col.type || col.type === 'text'">{{ row[col.key] }}</span>
+      <ng-container *ngIf="!col.type || col.type === 'text'">
+        <span *ngIf="showLabels" class="cell-label">{{ col.label }}</span>
+        <span>{{ row[col.key] }}</span>
+      </ng-container>
 
-      <span *ngIf="col.type === 'status'" [style.color]="getStatusColor(row[col.key])">
-        {{ row[col.key] }}
-      </span>
+      <ng-container *ngIf="col.type === 'status'">
+        <span *ngIf="showLabels" class="cell-label">{{ col.label }}</span>
+        <span class="badge"
+          [style.color]="getStatusColor(row[col.key])"
+          [style.background]="getStatusBackground(row[col.key])"
+          [style.border]="getStatusBorder(row[col.key])">
+          {{ row[col.key] }}
+        </span>
+      </ng-container>
 
       <span *ngIf="col.type === 'actions'" class="actions">
         <ng-container *ngFor="let a of actions">
           <span *ngIf="a.icon" class="icon-btn" (click)="onActionClick(a.id, row, $event)">{{ a.icon }}</span>
-          <button *ngIf="!a.icon" (click)="onActionClick(a.id, row, $event)">{{ a.label }}</button>
+          <button *ngIf="!a.icon && !a.primary" (click)="onActionClick(a.id, row, $event)">{{ a.label }}</button>
+          <button *ngIf="!a.icon && a.primary" class="primary" (click)="onActionClick(a.id, row, $event)">{{ a.label }}</button>
         </ng-container>
       </span>
 

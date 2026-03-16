@@ -14,6 +14,7 @@
 .header-cell {
   flex: 1;
   font-size: 12px;
+  font-weight: 400;
   color: #B1B1B1;
 }
 
@@ -41,28 +42,31 @@
 }
 
 .badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 6px 18px;
   border-radius: 29px;
   font-size: 9px;
   font-weight: 700;
-  background: rgba(0, 179, 93, 0.1);
-  border: 1px solid rgba(0, 179, 93, 0.2);
-  color: #00B35D;
 }
 
 .actions {
   display: flex;
-  gap: 16px;
+  gap: 12px;
 }
 
 .actions button {
+  width: 118px;
   height: 40px;
-  padding: 0 24px;
   border: 1px solid #007B94;
   border-radius: 20px;
   background: transparent;
   color: #FFFFFF;
   font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
 }
 
@@ -79,4 +83,39 @@
 
 .icon-btn:hover {
   opacity: 1;
+}
+
+/* Variant 3: gradient background */
+
+.table.gradient {
+  background: linear-gradient(180deg, rgba(75, 75, 75, 0.2) 0%, rgba(31, 31, 31, 0.2) 100%);
+}
+
+.table.gradient .row {
+  padding: 24px;
+}
+
+.table.gradient .cell {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.cell-label {
+  font-size: 16px;
+  font-weight: 400;
+  color: #F0F0F0;
+}
+
+/* Primary action button */
+
+.actions button.primary {
+  background: #004C5C;
+  border: 1px solid #33BAEA;
+}
+
+.actions button.primary:hover {
+  background: #005d70;
 }

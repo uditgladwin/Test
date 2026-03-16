@@ -73,6 +73,30 @@ export class AppComponent {
     { id: 'menu', label: '', icon: '\u22EE' }
   ];
 
+  // --- Table 4: Generated Reports (gradient bg + label/value pairs + primary buttons) ---
+
+  reportColumns: TableColumn[] = [
+    { key: 'reportId', label: 'Report ID' },
+    { key: 'testName', label: 'Test Name' },
+    { key: 'applications', label: 'Applications' },
+    { key: 'dateAdded', label: 'Date Added' },
+    { key: 'actions', label: '', type: 'actions' }
+  ];
+
+  reportRows = [
+    { reportId: '341', testName: 'Dell XCQ - 12', applications: 'LDDR4, USB, PCIe', dateAdded: 'May 13, 03:40:00' },
+    { reportId: '341', testName: 'Dell XCQ - 12', applications: 'LDDR4, USB, PCIe', dateAdded: 'May 13, 03:40:00' },
+    { reportId: '341', testName: 'Dell XCQ - 12', applications: 'LDDR4, USB, PCIe', dateAdded: 'May 13, 03:40:00' },
+    { reportId: '341', testName: 'Dell XCQ - 12', applications: 'LDDR4, USB, PCIe', dateAdded: 'May 13, 03:40:00' },
+    { reportId: '341', testName: 'Dell XCQ - 12', applications: 'LDDR4, USB, PCIe', dateAdded: 'May 13, 03:40:00' },
+  ];
+
+  reportActions = [
+    { id: 'delete', label: '', icon: '\uD83D\uDDD1' },
+    { id: 'view', label: 'View' },
+    { id: 'export', label: 'Export', primary: true }
+  ];
+
   // --- Events ---
 
   onRowClick(row: any) {
