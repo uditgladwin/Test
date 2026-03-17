@@ -59,3 +59,56 @@
   <clarius-button label="With Icon" [size]="ButtonSize.Large" [iconMode]="ButtonIconMode.WithIcon" icon="directions_car" [state]="ButtonState.Default"></clarius-button>
 </div>
 
+<h2>Dashboard Cards</h2>
+<div class="dashboard-grid">
+
+  <clarius-dashboard-card
+    title="Sequences"
+    [headerLink]="true"
+    [columns]="sequenceColumns"
+    [rows]="sequenceRows"
+    (headerClicked)="onHeaderClick('sequences')"
+    (linkClicked)="onLinkClick($event)">
+  </clarius-dashboard-card>
+
+  <clarius-dashboard-card
+    title="Test Benches"
+    [headerLink]="true"
+    [columns]="testBenchCardColumns"
+    [rows]="testBenchCardRows"
+    [statusColors]="testBenchDotColors"
+    (headerClicked)="onHeaderClick('testbenches')">
+  </clarius-dashboard-card>
+
+  <clarius-dashboard-card
+    title="Failed Tests"
+    [headerLink]="true"
+    headerBackground="rgba(255, 59, 48, 0.15)"
+    [showColumnHeaders]="true"
+    [columns]="failedTestColumns"
+    [rows]="failedTestRows"
+    [statusColors]="failedTestStatusColors"
+    (headerClicked)="onHeaderClick('failed-tests')">
+  </clarius-dashboard-card>
+
+  <clarius-dashboard-card
+    title="Applications"
+    [headerLink]="true"
+    [columns]="appColumns"
+    [rows]="appRows"
+    (headerClicked)="onHeaderClick('applications')"
+    (linkClicked)="onLinkClick($event)">
+  </clarius-dashboard-card>
+
+  <clarius-dashboard-card
+    title="Running Tests"
+    emptyMessage="No Tests Are Running">
+  </clarius-dashboard-card>
+
+  <clarius-dashboard-card
+    title="Notifications"
+    emptyMessage="There are no notifications to display.">
+  </clarius-dashboard-card>
+
+</div>
+

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TableColumn } from 'clarius-ui';
+import { TableColumn, CardColumn } from 'clarius-ui';
 import { ButtonState, ButtonSize, ButtonIconMode } from 'clarius-ui';
 
 @Component({
@@ -123,6 +123,68 @@ export class AppComponent {
   ButtonSize = ButtonSize;
   ButtonIconMode = ButtonIconMode;
 
+  // --- Dashboard Card 1: Sequences (title + arrow, 3 cols with LAUNCH link) ---
+
+  sequenceColumns: CardColumn[] = [
+    { key: 'name', label: 'Name' },
+    { key: 'id', label: 'ID' },
+    { key: 'launch', label: '', type: 'link', linkText: 'LAUNCH' }
+  ];
+
+  sequenceRows = [
+    { name: 'test1_02', id: 'TKFWTXS05' },
+    { name: 'SequenceTes...', id: 'TKFWTXS04' },
+    { name: 'SequenceTes...', id: 'TKFWTXS18' },
+    { name: 'SequenceTes...', id: 'TKFWTXS03' },
+    { name: 'xcvsd', id: 'TKFWTXS06' },
+  ];
+
+  // --- Dashboard Card 2: Test Benches (title + arrow, name + dot) ---
+
+  testBenchCardColumns: CardColumn[] = [
+    { key: 'name' },
+    { key: 'status', type: 'dot' }
+  ];
+
+  testBenchCardRows = [
+    { name: 'anir', status: 'Online' },
+    { name: 'DisplayPortTB3', status: 'Offline' },
+    { name: 'DPTB', status: 'Online' },
+    { name: 'dual', status: 'Offline' },
+    { name: 'fw_dual', status: 'Offline' },
+  ];
+
+  testBenchDotColors = { 'Online': '#00B35D', 'Offline': '#FF3B30' };
+
+  // --- Dashboard Card 3: Failed Tests (red header, 4 cols with progress) ---
+
+  failedTestColumns: CardColumn[] = [
+    { key: 'test', label: 'Test' },
+    { key: 'testBench', label: 'TestBench' },
+    { key: 'scope', label: 'Scope' },
+    { key: 'progress', label: 'Progress', type: 'progress' }
+  ];
+
+  failedTestRows = [
+    { test: 'qwrewtry', testBench: 'newRecTestbench', scope: '', progress: '100%', progressStatus: 'Failed' },
+    { test: 'qwewtbta', testBench: 'newRecTestbench', scope: '', progress: '100%', progressStatus: 'Failed' },
+    { test: 'efggf', testBench: 'newRecTestbench', scope: '', progress: '100%', progressStatus: 'Failed' },
+    { test: 'wrwwewrwe', testBench: 'newRecTestbench', scope: '', progress: '100%', progressStatus: 'Failed' },
+  ];
+
+  failedTestStatusColors = { 'Failed': '#FF3B30' };
+
+  // --- Dashboard Card 4: Applications (title + arrow, name + LAUNCH link) ---
+
+  appColumns: CardColumn[] = [
+    { key: 'name' },
+    { key: 'launch', type: 'link', linkText: 'LAUNCH' }
+  ];
+
+  appRows = [
+    { name: 'UD sample app' },
+  ];
+
   // --- Events ---
 
   onRowClick(row: any) {
@@ -135,5 +197,13 @@ export class AppComponent {
 
   onSelectionChange(selected: any[]) {
     console.log('Selection changed:', selected);
+  }
+
+  onHeaderClick(card: string) {
+    console.log('Header arrow clicked:', card);
+  }
+
+  onLinkClick(event: any) {
+    console.log('Link clicked:', event);
   }
 }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { TableModule, ButtonModule } from 'clarius-ui';
+import { TableModule, ButtonModule, DashboardCardModule } from 'clarius-ui';
 
 import { AppComponent } from './app.component';
 
@@ -11,7 +11,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     TableModule,
-    ButtonModule
+    ButtonModule,
+    DashboardCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

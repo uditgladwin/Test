@@ -4,3 +4,6 @@ export * from './lib/table/models/table-column.model';
 export * from './lib/button/button.module';
 export * from './lib/button/button.component';
 export * from './lib/button/button.enums';
+export * from './lib/dashboard-card/dashboard-card.module';
+export * from './lib/dashboard-card/dashboard-card.component';
+export * from './lib/dashboard-card/dashboard-card.model';
