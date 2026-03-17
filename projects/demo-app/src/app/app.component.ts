@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { TableColumn, CardColumn } from 'clarius-ui';
-import { ButtonState, ButtonSize, ButtonIconMode } from 'clarius-ui';
 
 @Component({
   selector: 'app-root',
@@ -117,11 +116,6 @@ export class AppComponent {
   ];
 
   testStatusColors = { 'Failed': '#FF3B30', 'Passed': '#00B35D' };
-
-  // Expose button enums to template
-  ButtonState = ButtonState;
-  ButtonSize = ButtonSize;
-  ButtonIconMode = ButtonIconMode;
 
   // --- Dashboard Card 1: Sequences (title + arrow, 3 cols with LAUNCH link) ---
 
