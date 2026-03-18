@@ -95,6 +95,8 @@ export class AppComponent {
     { reportId: '341', testName: 'Dell XCQ - 12', applications: 'LDDR4, USB, PCIe', dateAdded: 'May 13, 03:40:00' },
     { reportId: '341', testName: 'Dell XCQ - 12', applications: 'LDDR4, USB, PCIe', dateAdded: 'May 13, 03:40:00' },
     { reportId: '341', testName: 'Dell XCQ - 12', applications: 'LDDR4, USB, PCIe', dateAdded: 'May 13, 03:40:00' },
+    { reportId: '341', testName: 'Dell XCQ - 12', applications: 'LDDR4, USB, PCIe', dateAdded: 'May 13, 03:40:00' },
+    { reportId: '341', testName: 'Dell XCQ - 12', applications: 'LDDR4, USB, PCIe', dateAdded: 'May 13, 03:40:00' },
   ];
 
   reportActions = [
