@@ -15,6 +15,7 @@ export class ClariusTableComponent {
   @Input() showLabels = false;
   @Input() gradient = false;
   @Input() statusDots = false;
+  @Input() lightWeight = false;
   @Input() borderGradient = false;
   @Output() rowClicked = new EventEmitter<any>();
   @Output() actionClicked = new EventEmitter<{ action: string; row: any }>();

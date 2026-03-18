@@ -1,7 +1,7 @@
 export interface TableColumn {
   key: string;
   label: string;
-  type?: 'text' | 'status' | 'actions' | 'checkbox';
+  type?: 'text' | 'status' | 'status-text' | 'status-dot' | 'actions' | 'checkbox';
   textColor?: string;
 }
 

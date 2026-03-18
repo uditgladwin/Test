@@ -1,4 +1,4 @@
-<div class="table" [class.gradient]="gradient" [class.border-gradient]="borderGradient">
+<div class="table" [class.gradient]="gradient" [class.border-gradient]="borderGradient" [class.light-weight]="lightWeight">
 
   <div class="header" *ngIf="!showLabels">
     <div class="header-cell" *ngFor="let col of columns">
@@ -30,6 +30,17 @@
         <span *ngIf="statusDots" class="status-dot-wrapper">
           <span class="status-dot" [style.background]="getStatusColor(row[col.key])"></span>
           <span [style.color]="getStatusColor(row[col.key])">{{ row[col.key] }}</span>
+        </span>
+      </ng-container>
+
+      <ng-container *ngIf="col.type === 'status-text'">
+        <span [style.color]="getStatusColor(row[col.key])">{{ row[col.key] }}</span>
+      </ng-container>
+
+      <ng-container *ngIf="col.type === 'status-dot'">
+        <span class="status-dot-wrapper">
+          <span *ngIf="statusColors[row[col.key]]" class="status-dot" [style.background]="getStatusColor(row[col.key])"></span>
+          <span [style.color]="statusColors[row[col.key]] ? getStatusColor(row[col.key]) : '#FFFFFF'">{{ row[col.key] }}</span>
         </span>
       </ng-container>
 

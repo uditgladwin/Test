@@ -25,7 +25,7 @@
   [rows]="servicesRows"
   [actions]="servicesActions"
   [statusColors]="servicesStatusColors"
-  [statusDots]="true"
+  [lightWeight]="true"
   (rowClicked)="onRowClick($event)"
   (actionClicked)="onActionClick($event)">
 </clarius-table>
@@ -35,18 +35,18 @@
   [columns]="reportColumns"
   [rows]="reportRows"
   [actions]="reportActions"
-  [showLabels]="true"
-  [gradient]="true"
   (rowClicked)="onRowClick($event)"
   (actionClicked)="onActionClick($event)">
 </clarius-table>
 
-<h2>List of Tests (Checkbox + Status)</h2>
+<h2>List of Tests</h2>
 <clarius-table
   [columns]="testColumns"
   [rows]="testRows"
+  [actions]="testActions"
   [statusColors]="testStatusColors"
   (rowClicked)="onRowClick($event)"
+  (actionClicked)="onActionClick($event)"
   (selectionChanged)="onSelectionChange($event)">
 </clarius-table>
 

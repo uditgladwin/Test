@@ -54,68 +54,76 @@ export class AppComponent {
     { key: 'address', label: 'Instrument Service Address' },
     { key: 'technologies', label: 'Technologies' },
     { key: 'applications', label: 'Applications' },
-    { key: 'connectivity', label: 'Connectivity Status', type: 'status' },
-    { key: 'lastValidated', label: 'Last Validated' },
+    { key: 'connectivity', label: 'Connectivity Status', type: 'status-text' },
+    { key: 'lastValidated', label: 'Last Validated', type: 'status-dot' },
     { key: 'actions', label: 'Actions', type: 'actions' }
   ];
 
   servicesRows = [
-    { name: 'Recorded test bench 777 (Rec)', address: '134.64.244.94:18000', technologies: '-', applications: '-', connectivity: 'Available', lastValidated: 'NA' },
-    { name: 'PCI_Testbench_Base', address: '134.64.244.94:18000', technologies: 'Tx PCIe Base...', applications: 'Tx PCIe Base...', connectivity: 'Unavailable', lastValidated: '2 months ago' },
-    { name: 'USB_Testbench', address: '134.64.244.94:18000', technologies: 'Tx Display Port...', applications: 'Tx Display Po...', connectivity: 'In Use', lastValidated: 'Not Validated' },
-    { name: 'LDDR4_Testbench', address: '134.64.244.94:18000', technologies: 'Tx USB', applications: 'Tx USB Gen...', connectivity: 'Available', lastValidated: '3 days ago' },
+    { name: 'anir', address: 'http://10.233.237.70:18000', technologies: 'TX DisplayPort', applications: '-', connectivity: 'Available', lastValidated: 'Not Validated' },
+    { name: 'DisplayPortTB3', address: 'http://10.233.237.3:18000', technologies: 'TX DisplayPort', applications: '-', connectivity: 'Unavailable', lastValidated: 'Not Validated' },
+    { name: 'DPTB', address: 'http://10.233.237.82:18000', technologies: 'TX DisplayPort', applications: '-', connectivity: 'Available', lastValidated: 'Jan 29, 2026, 16:15:21' },
+    { name: 'dual', address: 'http://10.233.236.171:18000', technologies: 'TX Base, TX Tech1', applications: '-', connectivity: 'Unavailable', lastValidated: 'Not Validated' },
+    { name: 'fw_dual', address: 'http://10.233.237.233:18000', technologies: 'TX Base', applications: '-', connectivity: 'Available', lastValidated: 'Feb 23, 2026, 15:24:06' },
+    { name: 'gff (Rec)', address: 'http://dgdf:18000', technologies: '-', applications: '-', connectivity: 'Unavailable', lastValidated: 'NA' },
+    { name: 'Live_TB', address: 'http://10.233.237.69:18000', technologies: 'TX Base', applications: '-', connectivity: 'Unavailable', lastValidated: 'Not Validated' },
+    { name: 'MOCK_DUALSTACK', address: 'http://10.233.237.233:18000', technologies: 'TX USB Mock', applications: '-', connectivity: 'Available', lastValidated: 'Not Validated' },
   ];
 
   servicesStatusColors = { 'Available': '#00B35D', 'Unavailable': '#FF3B30', 'In Use': '#FFD600' };
+  servicesLastValidatedColors = { 'Jan 29, 2026, 16:15:21': '#00B35D', 'Feb 23, 2026, 15:24:06': '#00B35D' };
   servicesActions = [
     { id: 'validate', label: '', icon: 'assets/icons/validate.png' },
     { id: 'edit', label: '', icon: 'assets/icons/edit.png' },
-    { id: 'menu', label: '', icon: '\u22EE' }
+    { id: 'delete', label: '', icon: 'assets/icons/delete.png' }
   ];
 
-  // --- Table 4: Generated Reports (gradient bg + label/value pairs + primary buttons) ---
+  // --- Table 4: Generated Reports (flat layout, delete icon + View button) ---
 
   reportColumns: TableColumn[] = [
-    { key: 'reportId', label: 'Report ID' },
+    { key: 'reportName', label: 'Report Name' },
     { key: 'testName', label: 'Test Name' },
     { key: 'applications', label: 'Applications' },
-    { key: 'dateAdded', label: 'Date Added' },
+    { key: 'createdOn', label: 'Created On' },
     { key: 'actions', label: '', type: 'actions' }
   ];
 
   reportRows = [
-    { reportId: '341', testName: 'Dell XCQ - 12', applications: 'LDDR4, USB, PCIe', dateAdded: 'May 13, 03:40:00' },
-    { reportId: '341', testName: 'Dell XCQ - 12', applications: 'LDDR4, USB, PCIe', dateAdded: 'May 13, 03:40:00' },
-    { reportId: '341', testName: 'Dell XCQ - 12', applications: 'LDDR4, USB, PCIe', dateAdded: 'May 13, 03:40:00' },
-    { reportId: '341', testName: 'Dell XCQ - 12', applications: 'LDDR4, USB, PCIe', dateAdded: 'May 13, 03:40:00' },
-    { reportId: '341', testName: 'Dell XCQ - 12', applications: 'LDDR4, USB, PCIe', dateAdded: 'May 13, 03:40:00' },
+    { reportName: 'testing', testName: 'dontDelete3', applications: 'TKFWTXS04', createdOn: 'Feb 24, 10:01:09' },
+    { reportName: 'AshokTesting', testName: 'Run_02', applications: 'TKFWTXS04', createdOn: 'Feb 13, 17:16:29' },
+    { reportName: 'test_check', testName: 'test_18', applications: 'TKFWTXS04', createdOn: 'Jan 19, 18:22:23' },
+    { reportName: 'dssdsdsd', testName: 'test_plots_2', applications: 'TKFWTXS08', createdOn: 'Dec 09, 14:49:42' },
+    { reportName: 'sdssdssdworking', testName: 'sampleusb', applications: 'TKFWTXS06', createdOn: 'Dec 04, 22:54:57' },
   ];
 
   reportActions = [
     { id: 'delete', label: '', icon: 'assets/icons/delete.png' },
-    { id: 'view', label: 'View' },
-    { id: 'export', label: 'Export', primary: true }
+    { id: 'view', label: 'View', primary: true }
   ];
 
-  // --- Table 5: List of Tests (checkbox + colored status text) ---
+  // --- Table 5: List of Tests (checkbox + colored status text + View Results button) ---
 
   testColumns: TableColumn[] = [
     { key: 'select', label: '', type: 'checkbox' },
     { key: 'testName', label: 'Test Name' },
-    { key: 'tag', label: 'Tag' },
+    { key: 'testMode', label: 'Test Mode' },
     { key: 'applications', label: 'Applications' },
     { key: 'dateAdded', label: 'Date Added' },
-    { key: 'status', label: 'Status', type: 'status' }
+    { key: 'duration', label: 'Duration' },
+    { key: 'status', label: 'Status', type: 'status-text' },
+    { key: 'actions', label: '', type: 'actions' }
   ];
 
   testRows = [
-    { testName: 'qwrewtry', tag: 'Default', applications: 'MultiAnalysisApp2', dateAdded: 'Mar 11, 12:48:31', status: 'Failed' },
-    { testName: 'qwewtbta', tag: 'Default', applications: 'MultiAnalysisApp2', dateAdded: 'Mar 11, 12:45:42', status: 'Failed' },
-    { testName: 'efggf', tag: 'Default', applications: 'MultiAnalysisApp2', dateAdded: 'Mar 11, 12:41:59', status: 'Failed' },
-    { testName: 'wrwwewrwe', tag: 'Default', applications: 'MultiAnalysisApp2', dateAdded: 'Mar 11, 12:39:02', status: 'Failed' },
+    { testName: 'qwrewtry', testMode: 'NA', applications: 'TKFWTXS04', dateAdded: 'Mar 11, 12:48:31', duration: 'Less than 1 min', status: 'Failed' },
+    { testName: 'qwewtbta', testMode: 'NA', applications: 'TKFWTXS04', dateAdded: 'Mar 11, 12:45:42', duration: 'Less than 1 min', status: 'Failed' },
+    { testName: 'efggf', testMode: 'NA', applications: 'TKFWTXS04', dateAdded: 'Mar 11, 12:41:50', duration: 'Less than 1 min', status: 'Failed' },
+    { testName: 'wrwwewrwe', testMode: 'NA', applications: 'TKFWTXS04', dateAdded: 'Mar 11, 12:39:02', duration: 'Less than 1 min', status: 'Failed' },
+    { testName: 'erlvbdldldb', testMode: 'NA', applications: 'TKFWTXS04', dateAdded: 'Mar 11, 12:36:25', duration: 'Less than 1 min', status: 'Passed' },
   ];
 
-  testStatusColors = { 'Failed': '#FF3B30', 'Passed': '#00B35D' };
+  testStatusColors = { 'Failed': '#FF3B30', 'Passed': '#00B35D', 'Draft': '#B1B1B1' };
+  testActions = [{ id: 'viewResults', label: 'View Results', primary: true }];
 
   // --- Dashboard Card 1: Sequences (title + arrow, 3 cols with LAUNCH link) ---
 
