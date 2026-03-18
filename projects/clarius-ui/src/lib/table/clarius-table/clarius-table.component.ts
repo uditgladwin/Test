@@ -28,21 +28,18 @@ export class ClariusTableComponent {
   }
 
   getStatusBackground(value: string): string {
-    const hex = this.statusColors[value];
-    if (!hex) return 'transparent';
-    const r = parseInt(hex.slice(1, 3), 16);
-    const g = parseInt(hex.slice(3, 5), 16);
-    const b = parseInt(hex.slice(5, 7), 16);
-    return 'rgba(' + r + ',' + g + ',' + b + ',0.1)';
+    const rgb = this.hexToRgb(this.statusColors[value]);
+    return rgb ? 'rgba(' + rgb + ',0.1)' : 'transparent';
   }
 
   getStatusBorder(value: string): string {
-    const hex = this.statusColors[value];
-    if (!hex) return 'transparent';
-    const r = parseInt(hex.slice(1, 3), 16);
-    const g = parseInt(hex.slice(3, 5), 16);
-    const b = parseInt(hex.slice(5, 7), 16);
-    return '1px solid rgba(' + r + ',' + g + ',' + b + ',0.2)';
+    const rgb = this.hexToRgb(this.statusColors[value]);
+    return rgb ? '1px solid rgba(' + rgb + ',0.2)' : 'transparent';
+  }
+
+  private hexToRgb(hex: string): string | null {
+    if (!hex) return null;
+    return parseInt(hex.slice(1, 3), 16) + ',' + parseInt(hex.slice(3, 5), 16) + ',' + parseInt(hex.slice(5, 7), 16);
   }
 
   getButtonSize(action: TableAction): ButtonSize {

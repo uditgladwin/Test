@@ -22,7 +22,7 @@
 
   --btn-small-width: 100px;
   --btn-small-height: 24px;
-  --btn-small-padding: 0 12px;
+  --btn-small-padding: 0px 12px;
   --btn-small-font-size: 12px;
   --btn-small-border-radius: 20px;
 
@@ -68,7 +68,7 @@
 .btn--small {
   width: var(--btn-small-width);
   height: var(--btn-small-height);
-  padding: 0 12px;
+  padding: var(--btn-small-padding);
   font-size: var(--btn-small-font-size);
   line-height: 16px;
   border-radius: var(--btn-small-border-radius);
@@ -177,8 +177,4 @@
 /* With Icon */
 .btn--with-icon {
   justify-content: flex-start;
-}
-
-.btn--with-icon .btn__label {
-  flex: 1;
 }
