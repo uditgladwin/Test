@@ -1,5 +1,3 @@
-/* Button Component - BEM Structure */
-
 :host {
   --btn-bg: transparent;
   --btn-border: #007B94;
@@ -32,30 +30,25 @@
 .btn {
   box-sizing: border-box;
   display: inline-flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 10px;
 
   font-family: 'Noto Sans', sans-serif;
-  font-style: normal;
   font-weight: 400;
   line-height: 22px;
   text-align: center;
 
-  border-style: solid;
-  border-width: 1px;
+  border: 1px solid var(--btn-border);
 
   cursor: pointer;
   transition: all 0.2s ease;
   outline: none;
 
   background: var(--btn-bg);
-  border-color: var(--btn-border);
   color: var(--btn-text);
 }
 
-/* Large Size */
 .btn--large {
   width: var(--btn-large-width);
   height: var(--btn-large-height);
@@ -64,7 +57,6 @@
   border-radius: var(--btn-large-border-radius);
 }
 
-/* Small Size */
 .btn--small {
   width: var(--btn-small-width);
   height: var(--btn-small-height);
@@ -82,7 +74,6 @@
   min-width: 100px;
 }
 
-/* Primary variant (Export button) */
 .btn--primary {
   background: #004C5C;
   border-color: #33BAEA;
@@ -93,14 +84,12 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-/* Hover / Focus */
 .btn:hover:not(.btn--disabled):not(.btn--loading),
 .btn:focus:not(.btn--disabled):not(.btn--loading) {
   border-color: var(--btn-hover-border);
   box-shadow: var(--btn-hover-shadow);
 }
 
-/* Pressed */
 .btn:active:not(.btn--disabled):not(.btn--loading) {
   background: var(--btn-pressed-bg);
   color: var(--btn-pressed-text);
@@ -108,7 +97,6 @@
   box-shadow: none;
 }
 
-/* Disabled */
 .btn--disabled,
 .btn:disabled {
   background: var(--btn-disabled-bg);
@@ -119,7 +107,6 @@
   pointer-events: none;
 }
 
-/* Loading */
 .btn--loading {
   cursor: wait;
   pointer-events: none;
@@ -133,7 +120,6 @@
   opacity: 1 !important;
 }
 
-/* Label */
 .btn__label {
   flex: 1;
   display: flex;
@@ -141,7 +127,6 @@
   justify-content: center;
 }
 
-/* Icon */
 .btn__icon {
   width: 20px;
   height: 20px;
@@ -157,7 +142,6 @@
   font-size: 14px;
 }
 
-/* Loading Icon */
 .btn__loading-icon {
   width: 20px;
   height: 20px;
@@ -174,7 +158,6 @@
   to { transform: rotate(360deg); }
 }
 
-/* With Icon */
 .btn--with-icon {
   justify-content: flex-start;
 }

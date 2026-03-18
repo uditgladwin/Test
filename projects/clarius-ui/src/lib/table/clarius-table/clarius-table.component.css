@@ -21,7 +21,7 @@
 .row {
   display: flex;
   align-items: center;
-  padding: 0px 24px;
+  padding: 0 24px;
   height: 42px;
   border-bottom: 1px solid #303030;
   cursor: pointer;
@@ -41,14 +41,14 @@
   font-weight: 700;
   line-height: 16px;
   color: #FFFFFF;
-  padding: 13px 0px;
+  padding: 13px 0;
   height: 42px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
 }
 
-/* Light weight variant — 400 instead of 700 (used by Instrument Services) */
+/* Light weight variant (Instrument Services) */
 .table.light-weight .cell {
   font-weight: 400;
 }
@@ -60,7 +60,6 @@
   padding: 6px 18px;
   border-radius: 29px;
   font-size: 9px;
-  font-weight: 700;
 }
 
 .actions {
@@ -92,24 +91,20 @@
   opacity: 0.7;
 }
 
-/* Status dots (Variant 4) */
-
+/* Status dot */
 .status-dot-wrapper {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 12px;
 }
 
 .status-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  display: inline-block;
 }
 
-/* Variant 3: gradient background (Generated Reports) */
-
+/* Gradient variant (Generated Reports) */
 .table.gradient {
   background: linear-gradient(180deg, rgba(75, 75, 75, 0.2) 0%, rgba(31, 31, 31, 0.2) 100%);
 }
