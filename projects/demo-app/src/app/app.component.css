@@ -25,6 +25,11 @@ h2 {
   flex-wrap: wrap;
 }
 
+clarius-table {
+  display: block;
+  max-width: 1002px;
+}
+
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

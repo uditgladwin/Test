@@ -1,14 +1,14 @@
 <div class="table" [class.gradient]="gradient" [class.border-gradient]="borderGradient" [class.light-weight]="lightWeight">
 
   <div class="header" *ngIf="!showLabels">
-    <div class="header-cell" *ngFor="let col of columns">
+    <div class="header-cell" [class.col-actions]="col.type === 'actions'" [class.col-checkbox]="col.type === 'checkbox'" *ngFor="let col of columns">
       <input *ngIf="col.type === 'checkbox'" type="checkbox" [checked]="allSelected" [indeterminate]="someSelected" (click)="toggleAll($event)" />
       <span *ngIf="col.type !== 'checkbox'">{{ col.label }}</span>
     </div>
   </div>
 
   <div class="row" *ngFor="let row of rows" (click)="rowClicked.emit(row)">
-    <div class="cell" *ngFor="let col of columns">
+    <div class="cell" [class.col-actions]="col.type === 'actions'" [class.col-checkbox]="col.type === 'checkbox'" *ngFor="let col of columns">
 
       <ng-container *ngIf="col.type === 'checkbox'">
         <input type="checkbox" [checked]="isSelected(row)" (click)="toggleRow(row, $event)" />

@@ -67,9 +67,17 @@
   box-sizing: border-box;
 }
 
+.col-actions {
+  flex: none;
+}
+
+.col-checkbox {
+  flex: 0 0 40px;
+}
+
 .actions {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   align-items: center;
 }
 
