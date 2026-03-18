@@ -63,6 +63,10 @@ export class ClariusTableComponent {
     return this.rows.length > 0 && this.selectedRows.size === this.rows.length;
   }
 
+  get someSelected(): boolean {
+    return this.selectedRows.size > 0 && this.selectedRows.size < this.rows.length;
+  }
+
   toggleRow(row: any, event: MouseEvent) {
     event.stopPropagation();
     if (this.selectedRows.has(row)) {

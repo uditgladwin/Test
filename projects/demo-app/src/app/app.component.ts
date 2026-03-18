@@ -61,22 +61,18 @@ export class AppComponent {
   ];
 
   servicesRows = [
-    { name: 'anir', address: 'http://10.233.237.70:18000', technologies: 'TX DisplayPort', applications: '-', connectivity: 'Available', lastValidated: 'Not Validated' },
-    { name: 'DisplayPortTB3', address: 'http://10.233.237.3:18000', technologies: 'TX DisplayPort', applications: '-', connectivity: 'Unavailable', lastValidated: 'Not Validated' },
-    { name: 'DPTB', address: 'http://10.233.237.82:18000', technologies: 'TX DisplayPort', applications: '-', connectivity: 'Available', lastValidated: 'Jan 29, 2026, 16:15:21' },
-    { name: 'dual', address: 'http://10.233.236.171:18000', technologies: 'TX Base, TX Tech1', applications: '-', connectivity: 'Unavailable', lastValidated: 'Not Validated' },
-    { name: 'fw_dual', address: 'http://10.233.237.233:18000', technologies: 'TX Base', applications: '-', connectivity: 'Available', lastValidated: 'Feb 23, 2026, 15:24:06' },
-    { name: 'gff (Rec)', address: 'http://dgdf:18000', technologies: '-', applications: '-', connectivity: 'Unavailable', lastValidated: 'NA' },
-    { name: 'Live_TB', address: 'http://10.233.237.69:18000', technologies: 'TX Base', applications: '-', connectivity: 'Unavailable', lastValidated: 'Not Validated' },
-    { name: 'MOCK_DUALSTACK', address: 'http://10.233.237.233:18000', technologies: 'TX USB Mock', applications: '-', connectivity: 'Available', lastValidated: 'Not Validated' },
+    { name: 'Recorded test bench 777 (Rec)', address: '134.64.244.94:18000', technologies: '-', applications: '-', connectivity: 'Available', lastValidated: 'NA' },
+    { name: 'PCI_Testbench_Base', address: '134.64.244.94:18000', technologies: 'Tx PCIe Base...', applications: 'Tx PCIe Base...', connectivity: 'Unavailable', lastValidated: '2 months ago' },
+    { name: 'USB_Testbench', address: '134.64.244.94:18000', technologies: 'Tx Display Port...', applications: 'Tx Display Po...', connectivity: 'In Use', lastValidated: 'Not Validated' },
+    { name: 'LDDR4_Testbench', address: '134.64.244.94:18000', technologies: 'Tx USB', applications: 'Tx USB Gen...', connectivity: 'Available', lastValidated: '3 days ago' },
   ];
 
   servicesStatusColors = { 'Available': '#00B35D', 'Unavailable': '#FF3B30', 'In Use': '#FFD600' };
-  servicesLastValidatedColors = { 'Jan 29, 2026, 16:15:21': '#00B35D', 'Feb 23, 2026, 15:24:06': '#00B35D' };
+  servicesLastValidatedColors = { '2 months ago': '#00B35D', '3 days ago': '#00B35D' };
   servicesActions = [
-    { id: 'validate', label: '', icon: 'assets/icons/validate.png' },
-    { id: 'edit', label: '', icon: 'assets/icons/edit.png' },
-    { id: 'delete', label: '', icon: 'assets/icons/delete.png' }
+    { id: 'validate', label: '', icon: '\u27F3' },
+    { id: 'edit', label: '', icon: '\u270E' },
+    { id: 'more', label: '', icon: '\u22EE' }
   ];
 
   // --- Table 4: Generated Reports (stacked labels, gradient bg, delete + View + Export) ---

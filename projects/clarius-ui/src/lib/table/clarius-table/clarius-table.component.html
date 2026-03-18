@@ -2,7 +2,7 @@
 
   <div class="header" *ngIf="!showLabels">
     <div class="header-cell" *ngFor="let col of columns">
-      <input *ngIf="col.type === 'checkbox'" type="checkbox" [checked]="allSelected" (click)="toggleAll($event)" />
+      <input *ngIf="col.type === 'checkbox'" type="checkbox" [checked]="allSelected" [indeterminate]="someSelected" (click)="toggleAll($event)" />
       <span *ngIf="col.type !== 'checkbox'">{{ col.label }}</span>
     </div>
   </div>
