@@ -39,12 +39,13 @@ export class AppComponent {
 
   testbenchRows = [
     { name: 'PCI_Testbench_CEM', address: 'http://134.64.244.94:18000', application: 'PCIe', availability: 'Available' },
-    { name: 'PCI_Testbench_Base', address: 'http://134.64.244.94:18000', application: 'PCIe, USB 3', availability: 'Occupied' },
+    { name: 'PCI_Testbench_Base', address: 'http://134.64.244.94:18000', application: 'PCIe, USB 3', availability: 'Occupied by Amit' },
     { name: 'USB_Testbench', address: 'http://134.64.244.94:18000', application: 'USB 2, USB 3', availability: 'Available' },
     { name: 'LDDR4_Testbench', address: 'http://134.64.244.94:18000', application: 'LDDR4 - Dualstack', availability: 'Available' },
+    { name: 'Testbench - 127', address: 'http://134.64.244.94:18000', application: 'PCIe 3', availability: 'Available' },
   ];
 
-  testbenchStatusColors = { 'Available': '#00B35D', 'Occupied': '#FF3B30' };
+  testbenchStatusColors = { 'Available': '#00B35D', 'Occupied': '#FF3B30', 'Occupied by Amit': '#FF3B30' };
   testbenchActions = [{ id: 'modify', label: 'Modify' }, { id: 'delete', label: 'Delete' }];
 
   // --- Table 3: Instrument Services (text + colored status + icon actions) ---
