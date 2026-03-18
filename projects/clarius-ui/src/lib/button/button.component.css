@@ -1,8 +1,8 @@
 /* Button Component - BEM Structure */
 
 :host {
-  --btn-bg: #004C5C;
-  --btn-border: #33BAEA;
+  --btn-bg: transparent;
+  --btn-border: #007B94;
   --btn-text: #FFFFFF;
 
   --btn-hover-border: #FFFFFF;
@@ -14,11 +14,11 @@
   --btn-disabled-bg: #303030;
   --btn-disabled-text: #F0F0F0;
 
-  --btn-large-width: 256px;
+  --btn-large-width: 118px;
   --btn-large-height: 40px;
-  --btn-large-padding: 0 20px;
+  --btn-large-padding: 0px;
   --btn-large-font-size: 16px;
-  --btn-large-border-radius: 36px;
+  --btn-large-border-radius: 20px;
 
   --btn-small-width: 100px;
   --btn-small-height: 24px;

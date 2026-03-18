@@ -38,9 +38,17 @@
 
 .cell {
   flex: 1;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 12px;
   font-weight: 700;
+  font-style: normal;
+  line-height: 16px;
   color: #FFFFFF;
+  padding: 13px 0px;
+  height: 42px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
 }
 
 /* Light weight variant — 400 instead of 700 (used by Instrument Services) */
