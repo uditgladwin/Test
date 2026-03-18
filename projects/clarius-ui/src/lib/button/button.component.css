@@ -14,7 +14,7 @@
   --btn-disabled-bg: #303030;
   --btn-disabled-text: #F0F0F0;
 
-  --btn-large-width: 118px;
+  --btn-large-width: 137px;
   --btn-large-height: 40px;
   --btn-large-padding: 0px;
   --btn-large-font-size: 16px;
@@ -80,6 +80,17 @@
 .btn--small.btn--with-icon {
   width: auto;
   min-width: 100px;
+}
+
+/* Primary variant (Export button) */
+.btn--primary {
+  background: #004C5C;
+  border-color: #33BAEA;
+}
+
+.btn--primary:hover:not(.btn--disabled):not(.btn--loading) {
+  border-color: #33BAEA;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 /* Hover / Focus */

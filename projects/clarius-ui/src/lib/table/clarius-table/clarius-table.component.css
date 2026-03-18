@@ -112,18 +112,34 @@
   display: inline-block;
 }
 
-/* Variant 3: gradient background */
+/* Variant 3: gradient background (Generated Reports) */
 
 .table.gradient {
   background: linear-gradient(180deg, rgba(75, 75, 75, 0.2) 0%, rgba(31, 31, 31, 0.2) 100%);
 }
 
+.table.gradient .row {
+  height: auto;
+  padding: 16px 24px;
+}
+
+.table.gradient .cell {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: auto;
+  padding: 0;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+}
+
 .cell-label {
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 400;
-  color: #B1B1B1;
-  margin-bottom: 2px;
-  display: block;
+  color: #F0F0F0;
+  line-height: 22px;
 }
 
 /* Checkbox */

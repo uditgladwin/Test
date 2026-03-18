@@ -13,6 +13,7 @@ export class ClariusButtonComponent {
   @Input() state: ButtonState = ButtonState.Default;
   @Input() icon = '';
   @Input() type: 'button' | 'submit' = 'button';
+  @Input() primary = false;
 
   @Output() buttonClick = new EventEmitter<void>();
 
@@ -35,6 +36,9 @@ export class ClariusButtonComponent {
   get buttonClasses(): string {
     const classes = ['btn'];
     classes.push('btn--' + this.size);
+    if (this.primary) {
+      classes.push('btn--primary');
+    }
     if (this.isLoading) {
       classes.push('btn--loading');
     }

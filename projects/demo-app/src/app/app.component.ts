@@ -78,27 +78,28 @@ export class AppComponent {
     { id: 'delete', label: '', icon: 'assets/icons/delete.png' }
   ];
 
-  // --- Table 4: Generated Reports (flat layout, delete icon + View button) ---
+  // --- Table 4: Generated Reports (stacked labels, gradient bg, delete + View + Export) ---
 
   reportColumns: TableColumn[] = [
-    { key: 'reportName', label: 'Report Name' },
+    { key: 'reportId', label: 'Report ID' },
     { key: 'testName', label: 'Test Name' },
     { key: 'applications', label: 'Applications' },
-    { key: 'createdOn', label: 'Created On' },
+    { key: 'dateAdded', label: 'Date Added' },
     { key: 'actions', label: '', type: 'actions' }
   ];
 
   reportRows = [
-    { reportName: 'testing', testName: 'dontDelete3', applications: 'TKFWTXS04', createdOn: 'Feb 24, 10:01:09' },
-    { reportName: 'AshokTesting', testName: 'Run_02', applications: 'TKFWTXS04', createdOn: 'Feb 13, 17:16:29' },
-    { reportName: 'test_check', testName: 'test_18', applications: 'TKFWTXS04', createdOn: 'Jan 19, 18:22:23' },
-    { reportName: 'dssdsdsd', testName: 'test_plots_2', applications: 'TKFWTXS08', createdOn: 'Dec 09, 14:49:42' },
-    { reportName: 'sdssdssdworking', testName: 'sampleusb', applications: 'TKFWTXS06', createdOn: 'Dec 04, 22:54:57' },
+    { reportId: '341', testName: 'Dell XCQ - 12', applications: 'LDDR4, USB, PCIe', dateAdded: 'May 13, 03:40:00' },
+    { reportId: '341', testName: 'Dell XCQ - 12', applications: 'LDDR4, USB, PCIe', dateAdded: 'May 13, 03:40:00' },
+    { reportId: '341', testName: 'Dell XCQ - 12', applications: 'LDDR4, USB, PCIe', dateAdded: 'May 13, 03:40:00' },
+    { reportId: '341', testName: 'Dell XCQ - 12', applications: 'LDDR4, USB, PCIe', dateAdded: 'May 13, 03:40:00' },
+    { reportId: '341', testName: 'Dell XCQ - 12', applications: 'LDDR4, USB, PCIe', dateAdded: 'May 13, 03:40:00' },
   ];
 
   reportActions = [
     { id: 'delete', label: '', icon: 'assets/icons/delete.png' },
-    { id: 'view', label: 'View', primary: true }
+    { id: 'view', label: 'View' },
+    { id: 'export', label: 'Export', primary: true }
   ];
 
   // --- Table 5: List of Tests (checkbox + colored status text + View Results button) ---

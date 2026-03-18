@@ -51,6 +51,7 @@
           <clarius-button *ngIf="!a.icon"
             [label]="a.label"
             [size]="getButtonSize(a)"
+            [primary]="!!a.primary"
             (buttonClick)="onActionButtonClick(a.id, row)">
           </clarius-button>
         </ng-container>
