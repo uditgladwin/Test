@@ -1,12 +1,21 @@
 <h1>Clarius Table Demo</h1>
 
-<h2>Instruments</h2>
+<h2>Sequences</h2>
 <clarius-table
-  [columns]="instrumentColumns"
-  [rows]="instrumentRows"
-  [actions]="instrumentActions"
+  [columns]="sequenceTableColumns"
+  [rows]="sequenceTableRows"
+  [actions]="sequenceTableActions"
+  [gradient]="true"
   (rowClicked)="onRowClick($event)"
   (actionClicked)="onActionClick($event)">
+</clarius-table>
+
+<h2>Applications</h2>
+<clarius-table
+  [columns]="applicationColumns"
+  [rows]="applicationRows"
+  [gradient]="true"
+  (rowClicked)="onRowClick($event)">
 </clarius-table>
 
 <h2>Test Benches</h2>

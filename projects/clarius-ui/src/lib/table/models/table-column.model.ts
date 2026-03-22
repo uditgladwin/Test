@@ -12,5 +12,7 @@ export interface TableAction {
   primary?: boolean;
   primaryField?: string;
   primaryValue?: string;
+  disabledField?: string;
+  disabledValue?: any;
   size?: 'small' | 'large';
 }

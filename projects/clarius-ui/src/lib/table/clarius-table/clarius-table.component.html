@@ -7,7 +7,7 @@
     </div>
   </div>
 
-  <div class="row" *ngFor="let row of rows" (click)="rowClicked.emit(row)">
+  <div class="row" [class.row--dimmed]="row._dimmed" *ngFor="let row of rows" (click)="rowClicked.emit(row)">
     <div class="cell" [class.col-actions]="col.type === 'actions'" [class.col-checkbox]="col.type === 'checkbox'" *ngFor="let col of columns">
 
       <ng-container *ngIf="col.type === 'checkbox'">
@@ -52,6 +52,7 @@
             [label]="a.label"
             [size]="getButtonSize(a)"
             [primary]="isActionPrimary(a, row)"
+            [state]="getActionState(a, row)"
             (buttonClick)="onActionButtonClick(a.id, row)">
           </clarius-button>
         </ng-container>

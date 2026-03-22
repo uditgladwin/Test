@@ -8,24 +8,49 @@ import { TableColumn, CardColumn } from 'clarius-ui';
 })
 export class AppComponent {
 
-  // --- Table 1: Instrument table (simple — text + buttons) ---
+  // --- Table 1: Sequences (Name, Application, Modify/Delete buttons — some rows dimmed/disabled) ---
 
-  instrumentColumns: TableColumn[] = [
+  sequenceTableColumns: TableColumn[] = [
     { key: 'name', label: 'Name' },
-    { key: 'type', label: 'Type' },
-    { key: 'subType', label: 'Sub-type' },
+    { key: 'application', label: 'Application' },
     { key: 'actions', label: 'Action', type: 'actions' }
   ];
 
-  instrumentRows = [
-    { name: 'Scope 1', type: 'TCPIP::10.0.0.2::INSTR', subType: 'Signal Analyzer' },
-    { name: 'Scope 2', type: 'TCPIP::10.0.0.3::INSTR', subType: 'Signal Analyzer' },
-    { name: 'Scope 3', type: 'TCPIP::10.0.0.4::INSTR', subType: 'Signal Analyzer' },
-    { name: 'Scope 4', type: 'TCPIP::10.0.0.5::INSTR', subType: 'Signal Analyzer' },
-    { name: 'Scope 5', type: 'TCPIP::10.0.0.6::INSTR', subType: 'Signal Analyzer' },
+  sequenceTableRows = [
+    { name: 'test1_02', application: 'TKFWTXS05' },
+    { name: 'SequenceTest_BackCom...', application: 'TKFWTXS04' },
+    { name: 'SequenceTest_BackCom...', application: 'TKFWTXS05', _dimmed: true },
+    { name: 'SequenceTest_BackCom...', application: 'TKFWRXS17', _dimmed: true },
+    { name: 'SequenceTest_BackCom...', application: 'TKFWTXS18' },
+    { name: 'SequenceTest_BackCom...', application: 'TKFWTXS03, TKFWTXS07' },
+    { name: 'xcvsd', application: 'TKFWTXS06' },
   ];
 
-  instrumentActions = [{ id: 'modify', label: 'Modify' }, { id: 'delete', label: 'Delete' }];
+  sequenceTableActions = [
+    { id: 'modify', label: 'Modify', disabledField: '_dimmed', disabledValue: true },
+    { id: 'delete', label: 'Delete' }
+  ];
+
+  // --- Table 1b: Applications (Name, Type, Sub-type, Version — first row bold, rest dimmed) ---
+
+  applicationColumns: TableColumn[] = [
+    { key: 'name', label: 'Name' },
+    { key: 'type', label: 'Type' },
+    { key: 'subType', label: 'Sub-type' },
+    { key: 'version', label: 'Version' }
+  ];
+
+  applicationRows = [
+    { name: 'UD sample app', type: 'TX Base', subType: 'Version0', version: '1.0' },
+    { name: 'Compliance_mode', type: 'TX Base', subType: 'Version0', version: '1.0', _dimmed: true },
+    { name: 'Default_Compliance_mode', type: 'TX Base', subType: 'Version0', version: '1.0', _dimmed: true },
+    { name: 'Default_User_Defined_mode', type: 'TX Base', subType: 'Version0', version: '1.0', _dimmed: true },
+    { name: 'DisplayPort TX14 HBR', type: 'TX DisplayPort', subType: 'HBR', version: '4.0.0', _dimmed: true },
+    { name: 'DisplayPort TX14 HBR2', type: 'TX DisplayPort', subType: 'HBR2', version: '4.0.0', _dimmed: true },
+    { name: 'ManualCursorApp', type: 'TX Base', subType: 'Version0', version: '1.0', _dimmed: true },
+    { name: 'MultiAnalysisApp1', type: 'TX Base', subType: 'Version0', version: '1.0', _dimmed: true },
+    { name: 'MultiAnalysisApp2', type: 'TX Base', subType: 'Version0', version: '1.0', _dimmed: true },
+  ];
 
   // --- Table 2: Test Benches (matching actual platform — name, address, tech, app, availability, last validated, action icons) ---
 

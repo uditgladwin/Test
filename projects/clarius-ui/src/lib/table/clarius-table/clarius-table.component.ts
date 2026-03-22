@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { TableColumn, TableAction } from '../models/table-column.model';
-import { ButtonSize } from '../../button/button.enums';
+import { ButtonSize, ButtonState } from '../../button/button.enums';
 
 @Component({
   selector: 'clarius-table',
@@ -51,6 +51,17 @@ export class ClariusTableComponent {
       return row[action.primaryField] === action.primaryValue;
     }
     return !!action.primary;
+  }
+
+  isActionDisabled(action: TableAction, row: any): boolean {
+    if (action.disabledField) {
+      return row[action.disabledField] === action.disabledValue;
+    }
+    return false;
+  }
+
+  getActionState(action: TableAction, row: any): ButtonState {
+    return this.isActionDisabled(action, row) ? ButtonState.Disabled : ButtonState.Default;
   }
 
   onActionClick(actionId: string, row: any, event: MouseEvent) {
