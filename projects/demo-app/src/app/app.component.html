@@ -9,33 +9,22 @@
   (actionClicked)="onActionClick($event)">
 </clarius-table>
 
-<h2>Testbench Management</h2>
+<h2>Test Benches</h2>
 <clarius-table
   [columns]="testbenchColumns"
   [rows]="testbenchRows"
   [actions]="testbenchActions"
   [statusColors]="testbenchStatusColors"
-  (rowClicked)="onRowClick($event)"
-  (actionClicked)="onActionClick($event)">
-</clarius-table>
-
-<h2>Instrument Services</h2>
-<clarius-table
-  [columns]="servicesColumns"
-  [rows]="servicesRows"
-  [actions]="servicesActions"
-  [statusColors]="servicesStatusColors"
   [lightWeight]="true"
   (rowClicked)="onRowClick($event)"
   (actionClicked)="onActionClick($event)">
 </clarius-table>
 
-<h2>Generated Reports</h2>
+<h2>Reports</h2>
 <clarius-table
   [columns]="reportColumns"
   [rows]="reportRows"
   [actions]="reportActions"
-  [showLabels]="true"
   [gradient]="true"
   (rowClicked)="onRowClick($event)"
   (actionClicked)="onActionClick($event)">

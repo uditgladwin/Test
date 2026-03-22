@@ -27,78 +27,66 @@ export class AppComponent {
 
   instrumentActions = [{ id: 'modify', label: 'Modify' }, { id: 'delete', label: 'Delete' }];
 
-  // --- Table 2: Testbench table (text + status badges + buttons) ---
+  // --- Table 2: Test Benches (matching actual platform — name, address, tech, app, availability, last validated, action icons) ---
 
   testbenchColumns: TableColumn[] = [
     { key: 'name', label: 'Name' },
     { key: 'address', label: 'Hub Address' },
-    { key: 'application', label: 'Application' },
-    { key: 'availability', label: 'Availability', type: 'status' },
-    { key: 'actions', label: 'Action', type: 'actions' }
+    { key: 'technologies', label: 'Technologies' },
+    { key: 'applications', label: 'Applications' },
+    { key: 'availability', label: 'Availability', type: 'status-text' },
+    { key: 'lastValidated', label: 'Last Validated', type: 'status-dot' },
+    { key: 'actions', label: '', type: 'actions' }
   ];
 
   testbenchRows = [
-    { name: 'PCI_Testbench_CEM', address: 'http://134.64.244.94:18000', application: 'PCIe', availability: 'Available' },
-    { name: 'PCI_Testbench_Base', address: 'http://134.64.244.94:18000', application: 'PCIe, USB 3', availability: 'Occupied by Amit' },
-    { name: 'USB_Testbench', address: 'http://134.64.244.94:18000', application: 'USB 2, USB 3', availability: 'Available' },
-    { name: 'LDDR4_Testbench', address: 'http://134.64.244.94:18000', application: 'LDDR4 - Dualstack', availability: 'Available' },
-    { name: 'Testbench - 127', address: 'http://134.64.244.94:18000', application: 'PCIe 3', availability: 'Available' },
+    { name: 'anir', address: 'http://10.233.237.70:18000', technologies: 'TX DisplayPort', applications: '-', availability: 'Available', lastValidated: 'Not Validated' },
+    { name: 'DisplayPortTB3', address: 'http://10.233.237.3:18000', technologies: 'TX DisplayPort', applications: '-', availability: 'Unavailable', lastValidated: 'Not Validated' },
+    { name: 'DPTB', address: 'http://10.233.237.82:18000', technologies: 'TX DisplayPort', applications: '-', availability: 'Available', lastValidated: 'Jan 29, 2026, 16:15:21' },
+    { name: 'dual', address: 'http://10.233.236.171:18000', technologies: 'TX Base, TX ...', applications: '-', availability: 'Available', lastValidated: 'Not Validated' },
+    { name: 'fw_dual', address: 'http://10.233.237.233:18000', technologies: 'TX Base', applications: '-', availability: 'Available', lastValidated: 'Feb 23, 2026, 15:24:06' },
+    { name: 'gff (Rec)', address: 'http://dgdf:18000', technologies: '-', applications: '-', availability: 'Unavailable', lastValidated: 'NA' },
+    { name: 'Live_TB', address: 'http://10.233.237.69:18000', technologies: 'TX Base', applications: '-', availability: 'Unavailable', lastValidated: 'Not Validated' },
+    { name: 'MOCK_DUALSTACK', address: 'http://10.233.237.233:18000', technologies: 'TX USB Mock', applications: '-', availability: 'Available', lastValidated: 'Not Validated' },
+    { name: 'new_one', address: 'http://tek-2md2422ql0:18000', technologies: 'TX Base', applications: 'MultiAnalysis...', availability: 'Unavailable', lastValidated: 'Not Validated' },
+    { name: 'new_tb_nikita (Rec)', address: 'http://tek-2md2422ql0:18000', technologies: '-', applications: '-', availability: 'Unavailable', lastValidated: 'NA' },
   ];
 
-  testbenchStatusColors = { 'Available': '#00B35D', 'Occupied': '#FF3B30', 'Occupied by Amit': '#FF3B30' };
-  testbenchActions = [{ id: 'modify', label: 'Modify' }, { id: 'delete', label: 'Delete' }];
-
-  // --- Table 3: Instrument Services (text + colored status + icon actions) ---
-
-  servicesColumns: TableColumn[] = [
-    { key: 'name', label: 'Name' },
-    { key: 'address', label: 'Instrument Service Address' },
-    { key: 'technologies', label: 'Technologies' },
-    { key: 'applications', label: 'Applications' },
-    { key: 'connectivity', label: 'Connectivity Status', type: 'status-text' },
-    { key: 'lastValidated', label: 'Last Validated', type: 'status-dot' },
-    { key: 'actions', label: 'Actions', type: 'actions' }
-  ];
-
-  servicesRows = [
-    { name: 'Recorded test bench 777 (Rec)', address: '134.64.244.94:18000', technologies: '-', applications: '-', connectivity: 'Available', lastValidated: 'NA' },
-    { name: 'PCI_Testbench_Base', address: '134.64.244.94:18000', technologies: 'Tx PCIe Base...', applications: 'Tx PCIe Base...', connectivity: 'Unavailable', lastValidated: '2 months ago' },
-    { name: 'USB_Testbench', address: '134.64.244.94:18000', technologies: 'Tx Display Port...', applications: 'Tx Display Po...', connectivity: 'In Use', lastValidated: 'Not Validated' },
-    { name: 'LDDR4_Testbench', address: '134.64.244.94:18000', technologies: 'Tx USB', applications: 'Tx USB Gen...', connectivity: 'Available', lastValidated: '3 days ago' },
-  ];
-
-  servicesStatusColors = { 'Available': '#00B35D', 'Unavailable': '#FF3B30', 'In Use': '#FFD600' };
-  servicesLastValidatedColors = { '2 months ago': '#00B35D', '3 days ago': '#00B35D' };
-  servicesActions = [
-    { id: 'validate', label: '', icon: '\u27F3' },
+  testbenchStatusColors: { [key: string]: string } = {
+    'Available': '#00B35D', 'Unavailable': '#FF3B30',
+    'Jan 29, 2026, 16:15:21': '#FF3B30', 'Feb 23, 2026, 15:24:06': '#FF3B30'
+  };
+  testbenchActions = [
+    { id: 'validate', label: '', icon: '\u2714' },
     { id: 'edit', label: '', icon: '\u270E' },
-    { id: 'more', label: '', icon: '\u22EE' }
+    { id: 'delete', label: '', icon: '\u{1F5D1}' }
   ];
 
-  // --- Table 4: Generated Reports (stacked labels, gradient bg, delete + View + Export) ---
+  // (Instrument Services table removed — merged into Test Benches above)
+
+  // --- Table 4: Reports (matching actual platform — gradient bg, column headers, delete icon, View button with conditional styling) ---
 
   reportColumns: TableColumn[] = [
-    { key: 'reportId', label: 'Report ID' },
+    { key: 'reportName', label: 'Report Name' },
     { key: 'testName', label: 'Test Name' },
     { key: 'applications', label: 'Applications' },
-    { key: 'dateAdded', label: 'Date Added' },
+    { key: 'createdOn', label: 'Created On' },
     { key: 'actions', label: '', type: 'actions' }
   ];
 
   reportRows = [
-    { reportId: '341', testName: 'Dell XCQ - 12', applications: 'LDDR4, USB, PCIe', dateAdded: 'May 13, 03:40:00' },
-    { reportId: '341', testName: 'Dell XCQ - 12', applications: 'LDDR4, USB, PCIe', dateAdded: 'May 13, 03:40:00' },
-    { reportId: '341', testName: 'Dell XCQ - 12', applications: 'LDDR4, USB, PCIe', dateAdded: 'May 13, 03:40:00' },
-    { reportId: '341', testName: 'Dell XCQ - 12', applications: 'LDDR4, USB, PCIe', dateAdded: 'May 13, 03:40:00' },
-    { reportId: '341', testName: 'Dell XCQ - 12', applications: 'LDDR4, USB, PCIe', dateAdded: 'May 13, 03:40:00' },
-    { reportId: '341', testName: 'Dell XCQ - 12', applications: 'LDDR4, USB, PCIe', dateAdded: 'May 13, 03:40:00' },
-    { reportId: '341', testName: 'Dell XCQ - 12', applications: 'LDDR4, USB, PCIe', dateAdded: 'May 13, 03:40:00' },
+    { reportName: 'testing', testName: 'dontDelete3', applications: 'TKFWTXS04', createdOn: 'Feb 24, 10:01:09', status: 'PASS' },
+    { reportName: 'AshokTesting', testName: 'Run_02', applications: 'TKFWTXS04', createdOn: 'Feb 13, 17:16:29', status: 'PASS' },
+    { reportName: 'test_check', testName: 'test_18', applications: 'TKFWTXS04', createdOn: 'Jan 19, 18:22:23', status: 'PASS' },
+    { reportName: 'dssdsdsd', testName: 'test_plots_2', applications: 'TKFWTXS08', createdOn: 'Dec 09, 14:49:42', status: 'PASS' },
+    { reportName: 'sdssdssdworking', testName: 'sampleusb', applications: 'TKFWTXS06', createdOn: 'Dec 04, 22:54:57', status: 'PASS' },
+    { reportName: 'sdssdssd56', testName: 'sampleusb', applications: 'TKFWTXS06', createdOn: 'Dec 04, 22:50:05', status: 'FAIL' },
+    { reportName: 'sdssdssd', testName: 'sampleusb', applications: 'TKFWTXS06', createdOn: 'Dec 04, 22:48:37', status: 'PASS' },
   ];
 
   reportActions = [
-    { id: 'delete', label: '', icon: 'assets/icons/delete.png' },
-    { id: 'view', label: 'View' },
-    { id: 'export', label: 'Export', primary: true }
+    { id: 'delete', label: '', icon: '\u{1F5D1}' },
+    { id: 'view', label: 'View', primaryField: 'status', primaryValue: 'PASS' }
   ];
 
   // --- Table 5: List of Tests (checkbox + colored status text + View Results button) ---

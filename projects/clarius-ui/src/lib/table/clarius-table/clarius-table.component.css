@@ -117,29 +117,43 @@
   border-radius: 50%;
 }
 
-/* Gradient variant (Generated Reports) */
+/* Gradient variant (Reports table) */
 .table.gradient {
   background: linear-gradient(180deg, rgba(75, 75, 75, 0.2) 0%, rgba(31, 31, 31, 0.2) 100%);
+  padding: 24px;
+}
+
+.table.gradient .header {
+  padding: 0 0 24px 0;
+  border-bottom: none;
+}
+
+.table.gradient .header-cell {
+  font-size: 16px;
+  font-weight: 400;
+  color: #6B6B6B;
 }
 
 .table.gradient .row {
-  height: 52px;
-  padding: 0 24px;
+  height: auto;
+  padding: 11px 0;
 }
 
 .table.gradient .cell {
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  height: 52px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  height: auto;
   padding: 0;
-  gap: 2px;
-  font-size: 14px;
-  line-height: 20px;
 }
 
-.table.gradient .actions clarius-button {
-  --btn-large-width: 137px;
+.table.gradient .icon-btn {
+  font-size: 20px;
+  opacity: 0.6;
+}
+
+.table.gradient .actions {
+  gap: 16px;
 }
 
 .cell-label {

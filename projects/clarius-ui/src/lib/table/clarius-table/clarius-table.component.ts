@@ -46,6 +46,13 @@ export class ClariusTableComponent {
     return action.size === 'small' ? ButtonSize.Small : ButtonSize.Large;
   }
 
+  isActionPrimary(action: TableAction, row: any): boolean {
+    if (action.primaryField && action.primaryValue) {
+      return row[action.primaryField] === action.primaryValue;
+    }
+    return !!action.primary;
+  }
+
   onActionClick(actionId: string, row: any, event: MouseEvent) {
     event.stopPropagation();
     this.actionClicked.emit({ action: actionId, row: row });

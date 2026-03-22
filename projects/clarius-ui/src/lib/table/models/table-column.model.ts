@@ -10,5 +10,7 @@ export interface TableAction {
   label: string;
   icon?: string;
   primary?: boolean;
+  primaryField?: string;
+  primaryValue?: string;
   size?: 'small' | 'large';
 }
