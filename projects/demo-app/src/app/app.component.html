@@ -51,8 +51,15 @@
   (selectionChanged)="onSelectionChange($event)">
 </clarius-table>
 
-<h2>Dashboard Cards</h2>
-<div class="dashboard-grid">
+<clarius-dashboard
+  greeting="Hi admin"
+  actionLabel="Run Test"
+  (actionClicked)="onActionClick({ action: 'runTest', row: null })">
+
+  <clarius-dashboard-card
+    title="Notifications"
+    emptyMessage="There are no notifications to display.">
+  </clarius-dashboard-card>
 
   <clarius-dashboard-card
     title="Sequences"
@@ -61,6 +68,11 @@
     [rows]="sequenceRows"
     (headerClicked)="onHeaderClick('sequences')"
     (linkClicked)="onLinkClick($event)">
+  </clarius-dashboard-card>
+
+  <clarius-dashboard-card
+    title="Running Tests"
+    emptyMessage="No Tests Are Running">
   </clarius-dashboard-card>
 
   <clarius-dashboard-card
@@ -92,15 +104,5 @@
     (linkClicked)="onLinkClick($event)">
   </clarius-dashboard-card>
 
-  <clarius-dashboard-card
-    title="Running Tests"
-    emptyMessage="No Tests Are Running">
-  </clarius-dashboard-card>
-
-  <clarius-dashboard-card
-    title="Notifications"
-    emptyMessage="There are no notifications to display.">
-  </clarius-dashboard-card>
-
-</div>
+</clarius-dashboard>
 

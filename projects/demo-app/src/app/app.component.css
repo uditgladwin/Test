@@ -29,8 +29,7 @@ clarius-table {
   display: block;
 }
 
-.dashboard-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+clarius-dashboard {
+  display: block;
+  margin-top: 32px;
 }

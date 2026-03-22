@@ -7,3 +7,5 @@ export * from './lib/button/button.enums';
 export * from './lib/dashboard-card/dashboard-card.module';
 export * from './lib/dashboard-card/dashboard-card.component';
 export * from './lib/dashboard-card/dashboard-card.model';
+export * from './lib/dashboard/dashboard.module';
+export * from './lib/dashboard/dashboard.component';

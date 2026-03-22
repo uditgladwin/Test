@@ -1,0 +1,16 @@
+<div class="dashboard">
+
+  <div class="dashboard-header">
+    <span class="greeting">{{ greeting }}</span>
+    <clarius-button *ngIf="actionLabel"
+      [label]="actionLabel"
+      [icon]="actionIcon"
+      (buttonClick)="actionClicked.emit()">
+    </clarius-button>
+  </div>
+
+  <div class="widget-grid">
+    <ng-content></ng-content>
+  </div>
+
+</div>
