@@ -105,9 +105,11 @@ export class AppComponent {
   testRows = [
     { testName: 'qwrewtry', testMode: 'NA', applications: 'TKFWTXS04', dateAdded: 'Mar 11, 12:48:31', duration: 'Less than 1 min', status: 'Failed' },
     { testName: 'qwewtbta', testMode: 'NA', applications: 'TKFWTXS04', dateAdded: 'Mar 11, 12:45:42', duration: 'Less than 1 min', status: 'Failed' },
-    { testName: 'efggf', testMode: 'NA', applications: 'TKFWTXS04', dateAdded: 'Mar 11, 12:41:50', duration: 'Less than 1 min', status: 'Failed' },
+    { testName: 'efggf', testMode: 'NA', applications: 'TKFWTXS04', dateAdded: 'Mar 11, 12:41:59', duration: 'Less than 1 min', status: 'Failed' },
     { testName: 'wrwwewrwe', testMode: 'NA', applications: 'TKFWTXS04', dateAdded: 'Mar 11, 12:39:02', duration: 'Less than 1 min', status: 'Failed' },
-    { testName: 'erlvbdldldb', testMode: 'NA', applications: 'TKFWTXS04', dateAdded: 'Mar 11, 12:36:25', duration: 'Less than 1 min', status: 'Passed' },
+    { testName: 'erfvfbdfdffdb', testMode: 'NA', applications: 'TKFWTXS04', dateAdded: 'Mar 11, 12:36:25', duration: 'Less than 1 min', status: 'Passed' },
+    { testName: 'dddddswe32wdz...', testMode: 'NA', applications: 'TKFWTXS04', dateAdded: 'Mar 09, 14:31:08', duration: 'Less than 1 min', status: 'Failed' },
+    { testName: 'fddfsdtdsf', testMode: 'NA', applications: 'TKFWTXS04', dateAdded: 'Mar 09, 14:25:40', duration: 'Less than 1 min', status: 'Passed' },
   ];
 
   testStatusColors = { 'Failed': '#FF3B30', 'Passed': '#00B35D', 'Draft': '#B1B1B1' };
