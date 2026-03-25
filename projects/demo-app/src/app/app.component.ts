@@ -82,9 +82,9 @@ export class AppComponent {
     'Jan 29, 2026, 16:15:21': '#FF3B30', 'Feb 23, 2026, 15:24:06': '#FF3B30'
   };
   testbenchActions = [
-    { id: 'validate', label: '', icon: '\u2714' },
-    { id: 'edit', label: '', icon: '\u270E' },
-    { id: 'delete', label: '', icon: '\u{1F5D1}' }
+    { id: 'validate', label: '', icon: 'assets/icons/validate.png' },
+    { id: 'edit', label: '', icon: 'assets/icons/edit.png' },
+    { id: 'delete', label: '', icon: 'assets/icons/delete.png' }
   ];
 
   // (Instrument Services table removed — merged into Test Benches above)
@@ -110,7 +110,7 @@ export class AppComponent {
   ];
 
   reportActions = [
-    { id: 'delete', label: '', icon: '\u{1F5D1}' },
+    { id: 'delete', label: '', icon: 'assets/icons/delete.png' },
     { id: 'view', label: 'View', primaryField: 'status', primaryValue: 'PASS' }
   ];
 
