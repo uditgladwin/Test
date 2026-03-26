@@ -1,0 +1,14 @@
+{
+  "columns": [
+    { "key": "name" },
+    { "key": "status", "type": "dot" }
+  ],
+  "rows": [
+    { "name": "anir", "status": "Online" },
+    { "name": "DisplayPortTB3", "status": "Offline" },
+    { "name": "DPTB", "status": "Online" },
+    { "name": "dual", "status": "Offline" },
+    { "name": "fw_dual", "status": "Offline" }
+  ],
+  "statusColors": { "Online": "#00B35D", "Offline": "#FF3B30" }
+}

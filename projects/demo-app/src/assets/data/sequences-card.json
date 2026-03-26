@@ -1,0 +1,14 @@
+{
+  "columns": [
+    { "key": "name", "label": "Name" },
+    { "key": "id", "label": "ID" },
+    { "key": "launch", "label": "", "type": "link", "linkText": "LAUNCH" }
+  ],
+  "rows": [
+    { "name": "test1_02", "id": "TKFWTXS05" },
+    { "name": "SequenceTes...", "id": "TKFWTXS04" },
+    { "name": "SequenceTes...", "id": "TKFWTXS18" },
+    { "name": "SequenceTes...", "id": "TKFWTXS03" },
+    { "name": "xcvsd", "id": "TKFWTXS06" }
+  ]
+}

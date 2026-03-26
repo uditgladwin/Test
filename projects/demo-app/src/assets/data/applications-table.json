@@ -1,0 +1,21 @@
+{
+  "columns": [
+    { "key": "name", "label": "Name" },
+    { "key": "type", "label": "Type" },
+    { "key": "subType", "label": "Sub-type" },
+    { "key": "version", "label": "Version" }
+  ],
+  "rows": [
+    { "name": "UD sample app", "type": "TX Base", "subType": "Version0", "version": "1.0" },
+    { "name": "Compliance_mode", "type": "TX Base", "subType": "Version0", "version": "1.0", "_dimmed": true },
+    { "name": "Default_Compliance_mode", "type": "TX Base", "subType": "Version0", "version": "1.0", "_dimmed": true },
+    { "name": "Default_User_Defined_mode", "type": "TX Base", "subType": "Version0", "version": "1.0", "_dimmed": true },
+    { "name": "DisplayPort TX14 HBR", "type": "TX DisplayPort", "subType": "HBR", "version": "4.0.0", "_dimmed": true },
+    { "name": "DisplayPort TX14 HBR2", "type": "TX DisplayPort", "subType": "HBR2", "version": "4.0.0", "_dimmed": true },
+    { "name": "ManualCursorApp", "type": "TX Base", "subType": "Version0", "version": "1.0", "_dimmed": true },
+    { "name": "MultiAnalysisApp1", "type": "TX Base", "subType": "Version0", "version": "1.0", "_dimmed": true },
+    { "name": "MultiAnalysisApp2", "type": "TX Base", "subType": "Version0", "version": "1.0", "_dimmed": true }
+  ],
+  "actions": [],
+  "statusColors": {}
+}

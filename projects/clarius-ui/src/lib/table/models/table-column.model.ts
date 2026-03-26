@@ -1,8 +1,9 @@
 export interface TableColumn {
   key: string;
-  label: string;
-  type?: 'text' | 'status' | 'status-text' | 'status-dot' | 'actions' | 'checkbox';
+  label?: string;
+  type?: 'text' | 'status' | 'status-text' | 'status-dot' | 'actions' | 'checkbox' | 'dot' | 'link' | 'progress';
   textColor?: string;
+  linkText?: string;
 }
 
 export interface TableAction {

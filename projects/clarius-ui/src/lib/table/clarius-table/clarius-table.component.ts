@@ -17,9 +17,20 @@ export class ClariusTableComponent {
   @Input() statusDots = false;
   @Input() lightWeight = false;
   @Input() borderGradient = false;
+
+  // Card mode inputs
+  @Input() mode: 'table' | 'card' = 'table';
+  @Input() title = '';
+  @Input() headerLink = false;
+  @Input() headerBackground = '';
+  @Input() emptyMessage = '';
+  @Input() showColumnHeaders = false;
+
   @Output() rowClicked = new EventEmitter<any>();
   @Output() actionClicked = new EventEmitter<{ action: string; row: any }>();
   @Output() selectionChanged = new EventEmitter<any[]>();
+  @Output() headerClicked = new EventEmitter<void>();
+  @Output() linkClicked = new EventEmitter<{ column: string; row: any }>();
 
   selectedRows: Set<any> = new Set();
 
@@ -71,6 +82,11 @@ export class ClariusTableComponent {
 
   onActionButtonClick(actionId: string, row: any) {
     this.actionClicked.emit({ action: actionId, row: row });
+  }
+
+  onLinkClick(column: string, row: any, event: MouseEvent) {
+    event.stopPropagation();
+    this.linkClicked.emit({ column: column, row: row });
   }
 
   isSelected(row: any): boolean {

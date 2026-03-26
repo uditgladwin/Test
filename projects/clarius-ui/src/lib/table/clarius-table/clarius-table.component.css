@@ -186,3 +186,111 @@ input[type="checkbox"] {
   border-image-source: linear-gradient(180deg, rgba(56, 56, 56, 0) 0%, #222222 100%);
   border-image-slice: 1;
 }
+
+/* ========== CARD MODE ========== */
+
+.card {
+  border: 1px solid #303030;
+  border-radius: 10px;
+  background: #161616;
+  font-family: "Noto Sans", sans-serif;
+  overflow: hidden;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #303030;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.card-arrow {
+  font-size: 18px;
+  color: #B1B1B1;
+  cursor: pointer;
+}
+
+.card-arrow:hover {
+  color: #FFFFFF;
+}
+
+.card-columns {
+  display: flex;
+  padding: 12px 20px;
+  border-bottom: 1px solid #303030;
+}
+
+.card-col-header {
+  flex: 1;
+  font-size: 12px;
+  font-weight: 400;
+  color: #B1B1B1;
+}
+
+.card-empty {
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 13px;
+  color: #B1B1B1;
+}
+
+.card-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  border-bottom: 1px solid #303030;
+  cursor: pointer;
+}
+
+.card-row:last-child {
+  border-bottom: none;
+}
+
+.card-row:hover {
+  background: #1e1e1e;
+}
+
+.card-cell {
+  flex: 1;
+  font-size: 12px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.link-text {
+  color: #33BAEA;
+  cursor: pointer;
+  font-weight: 700;
+  text-align: right;
+}
+
+.link-text:hover {
+  text-decoration: underline;
+}
+
+.progress-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 3px solid #FF3B30;
+  font-size: 9px;
+  font-weight: 700;
+  color: #FFFFFF;
+}

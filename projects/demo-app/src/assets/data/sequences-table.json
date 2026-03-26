@@ -1,0 +1,21 @@
+{
+  "columns": [
+    { "key": "name", "label": "Name" },
+    { "key": "application", "label": "Application" },
+    { "key": "actions", "label": "Action", "type": "actions" }
+  ],
+  "rows": [
+    { "name": "test1_02", "application": "TKFWTXS05" },
+    { "name": "SequenceTest_BackCom...", "application": "TKFWTXS04" },
+    { "name": "SequenceTest_BackCom...", "application": "TKFWTXS05", "_dimmed": true },
+    { "name": "SequenceTest_BackCom...", "application": "TKFWRXS17", "_dimmed": true },
+    { "name": "SequenceTest_BackCom...", "application": "TKFWTXS18" },
+    { "name": "SequenceTest_BackCom...", "application": "TKFWTXS03, TKFWTXS07" },
+    { "name": "xcvsd", "application": "TKFWTXS06" }
+  ],
+  "actions": [
+    { "id": "modify", "label": "Modify", "disabledField": "_dimmed", "disabledValue": true },
+    { "id": "delete", "label": "Delete" }
+  ],
+  "statusColors": {}
+}

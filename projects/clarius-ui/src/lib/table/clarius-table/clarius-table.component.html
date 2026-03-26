@@ -1,4 +1,47 @@
-<div class="table" [class.gradient]="gradient" [class.border-gradient]="borderGradient" [class.light-weight]="lightWeight">
+<!-- CARD MODE -->
+<div class="card" *ngIf="mode === 'card'">
+
+  <div class="card-header" *ngIf="title" [style.background]="headerBackground || ''">
+    <span class="card-title">{{ title }}</span>
+    <span *ngIf="headerLink" class="card-arrow" (click)="headerClicked.emit()">&#8594;</span>
+  </div>
+
+  <div class="card-columns" *ngIf="showColumnHeaders && rows.length > 0">
+    <span class="card-col-header" *ngFor="let col of columns">{{ col.label }}</span>
+  </div>
+
+  <div class="card-empty" *ngIf="emptyMessage && rows.length === 0">
+    {{ emptyMessage }}
+  </div>
+
+  <div class="card-row" *ngFor="let row of rows" (click)="rowClicked.emit(row)">
+    <ng-container *ngFor="let col of columns">
+
+      <span *ngIf="!col.type || col.type === 'text'" class="card-cell" [style.color]="col.textColor || ''">
+        {{ row[col.key] }}
+      </span>
+
+      <span *ngIf="col.type === 'dot'" class="card-cell">
+        <span class="dot" [style.background]="getStatusColor(row[col.key])"></span>
+      </span>
+
+      <span *ngIf="col.type === 'link'" class="card-cell link-text" (click)="onLinkClick(col.key, row, $event)">
+        {{ col.linkText || row[col.key] }}
+      </span>
+
+      <span *ngIf="col.type === 'progress'" class="card-cell">
+        <span class="progress-circle" [style.border-color]="getStatusColor(row[col.key + 'Status'] || 'default')">
+          {{ row[col.key] }}
+        </span>
+      </span>
+
+    </ng-container>
+  </div>
+
+</div>
+
+<!-- TABLE MODE -->
+<div class="table" *ngIf="mode === 'table'" [class.gradient]="gradient" [class.border-gradient]="borderGradient" [class.light-weight]="lightWeight">
 
   <div class="header" *ngIf="!showLabels">
     <div class="header-cell" [class.col-actions]="col.type === 'actions'" [class.col-checkbox]="col.type === 'checkbox'" *ngFor="let col of columns">

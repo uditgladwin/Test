@@ -1,0 +1,9 @@
+{
+  "columns": [
+    { "key": "name" },
+    { "key": "launch", "type": "link", "linkText": "LAUNCH" }
+  ],
+  "rows": [
+    { "name": "UD sample app" }
+  ]
+}
