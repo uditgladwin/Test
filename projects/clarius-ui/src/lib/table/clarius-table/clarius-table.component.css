@@ -336,6 +336,6 @@ input[type="checkbox"] {
 /* ========== CARD VARIANT: Red header (Failed Tests) ========== */
 
 .card.card--red-header {
-  background: linear-gradient(180deg, #850800fa -134.58%, rgb(0 0 0 / 53%) 111.21%);
+  background: linear-gradient(180deg, rgba(133, 8, 0, 0.98) 0%, rgba(40, 5, 2, 0.85) 50%, rgba(0, 0, 0, 0.53) 100%);
   height: 318px;
 }
