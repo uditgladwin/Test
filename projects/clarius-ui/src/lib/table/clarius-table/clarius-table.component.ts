@@ -17,6 +17,7 @@ export class ClariusTableComponent {
   @Input() statusDots = false;
   @Input() lightWeight = false;
   @Input() borderGradient = false;
+  @Input() largeText = false;
 
   // Card mode inputs
   @Input() mode: 'table' | 'card' = 'table';

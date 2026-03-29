@@ -14,6 +14,7 @@ export declare class ClariusTableComponent {
     statusDots: boolean;
     lightWeight: boolean;
     borderGradient: boolean;
+    largeText: boolean;
     mode: 'table' | 'card';
     title: string;
     headerLink: boolean;
@@ -49,5 +50,5 @@ export declare class ClariusTableComponent {
     toggleRow(row: any, event: MouseEvent): void;
     toggleAll(event: MouseEvent): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ClariusTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ClariusTableComponent, "clarius-table", never, { "columns": "columns"; "rows": "rows"; "actions": "actions"; "statusColors": "statusColors"; "showLabels": "showLabels"; "gradient": "gradient"; "statusDots": "statusDots"; "lightWeight": "lightWeight"; "borderGradient": "borderGradient"; "mode": "mode"; "title": "title"; "headerLink": "headerLink"; "headerBackground": "headerBackground"; "emptyMessage": "emptyMessage"; "showColumnHeaders": "showColumnHeaders"; }, { "rowClicked": "rowClicked"; "actionClicked": "actionClicked"; "selectionChanged": "selectionChanged"; "headerClicked": "headerClicked"; "linkClicked": "linkClicked"; }, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ClariusTableComponent, "clarius-table", never, { "columns": "columns"; "rows": "rows"; "actions": "actions"; "statusColors": "statusColors"; "showLabels": "showLabels"; "gradient": "gradient"; "statusDots": "statusDots"; "lightWeight": "lightWeight"; "borderGradient": "borderGradient"; "largeText": "largeText"; "mode": "mode"; "title": "title"; "headerLink": "headerLink"; "headerBackground": "headerBackground"; "emptyMessage": "emptyMessage"; "showColumnHeaders": "showColumnHeaders"; }, { "rowClicked": "rowClicked"; "actionClicked": "actionClicked"; "selectionChanged": "selectionChanged"; "headerClicked": "headerClicked"; "linkClicked": "linkClicked"; }, never, never, false>;
 }

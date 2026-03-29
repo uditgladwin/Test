@@ -41,7 +41,7 @@
 </div>
 
 <!-- TABLE MODE -->
-<div class="table" *ngIf="mode === 'table'" [class.gradient]="gradient" [class.border-gradient]="borderGradient" [class.light-weight]="lightWeight">
+<div class="table" *ngIf="mode === 'table'" [class.gradient]="gradient" [class.border-gradient]="borderGradient" [class.light-weight]="lightWeight" [class.large-text]="largeText">
 
   <div class="header" *ngIf="!showLabels">
     <div class="header-cell" [class.col-actions]="col.type === 'actions'" [class.col-checkbox]="col.type === 'checkbox'" *ngFor="let col of columns">

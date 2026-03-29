@@ -152,7 +152,7 @@ input[type="checkbox"] {
 /* ========== DIMMED ROW ========== */
 
 .row--dimmed .cell {
-  color: #6B6B6B;
+  color: #5B5B5B;
 }
 
 /* ========== GRADIENT VARIANT (List of Tests) ========== */
@@ -163,6 +163,22 @@ input[type="checkbox"] {
 
 .table.gradient .row {
   min-height: 64px;
+}
+
+/* ========== LARGE TEXT VARIANT (Reports) ========== */
+
+.table.large-text .header-cell {
+  font-size: 16px;
+}
+
+.table.large-text .cell {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.table.large-text .row {
+  min-height: auto;
+  padding: 11px 0;
 }
 
 /* ========== BORDER GRADIENT VARIANT ========== */
