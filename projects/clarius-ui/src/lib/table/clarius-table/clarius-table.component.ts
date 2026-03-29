@@ -26,6 +26,7 @@ export class ClariusTableComponent {
   @Input() headerBackground = '';
   @Input() emptyMessage = '';
   @Input() showColumnHeaders = false;
+  @Input() cardVariant: '' | 'red-header' = '';
 
   @Output() rowClicked = new EventEmitter<any>();
   @Output() actionClicked = new EventEmitter<{ action: string; row: any }>();

@@ -1,5 +1,5 @@
 <!-- CARD MODE -->
-<div class="card" *ngIf="mode === 'card'">
+<div class="card" *ngIf="mode === 'card'" [class.card--red-header]="cardVariant === 'red-header'">
 
   <div class="card-header" *ngIf="title" [style.background]="headerBackground || ''">
     <span class="card-title">{{ title }}</span>
