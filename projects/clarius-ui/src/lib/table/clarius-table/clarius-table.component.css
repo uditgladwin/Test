@@ -1,13 +1,16 @@
+/* ========== BASE TABLE ========== */
+
 .table {
   border: 1px solid #303030;
   border-radius: 10px;
   background: #161616;
+  padding: 24px;
   font-family: "Noto Sans", sans-serif;
 }
 
 .header {
   display: flex;
-  padding: 16px 24px;
+  padding: 0 0 24px 0;
   border-bottom: 1px solid #303030;
 }
 
@@ -15,14 +18,16 @@
   flex: 1;
   font-size: 12px;
   font-weight: 400;
-  color: #B1B1B1;
+  color: #6B6B6B;
+  white-space: nowrap;
+  box-sizing: border-box;
 }
 
 .row {
   display: flex;
   align-items: center;
-  padding: 0 24px;
-  height: 42px;
+  padding: 0;
+  min-height: 56px;
   border-bottom: 1px solid #303030;
   cursor: pointer;
 }
@@ -42,16 +47,20 @@
   line-height: 16px;
   color: #FFFFFF;
   padding: 13px 0;
-  height: 42px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
-/* Light weight variant (Instrument Services) */
+/* Light weight variant (Testbench / Instrument Services) */
 .table.light-weight .cell {
   font-weight: 400;
 }
+
+/* ========== STATUS BADGES ========== */
 
 .badge {
   display: inline-block;
@@ -67,6 +76,22 @@
   box-sizing: border-box;
 }
 
+/* Status dot */
+.status-dot-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ========== ACTIONS ========== */
+
 .col-actions {
   flex: 1;
   display: flex;
@@ -79,7 +104,7 @@
 
 .actions {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   align-items: center;
 }
 
@@ -106,66 +131,16 @@
   opacity: 0.7;
 }
 
-/* Status dot */
-.status-dot-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-}
-
-/* Gradient variant (Reports table) */
-.table.gradient {
-  background: linear-gradient(180deg, rgba(75, 75, 75, 0.2) 0%, rgba(31, 31, 31, 0.2) 100%);
-  padding: 24px;
-}
-
-.table.gradient .header {
-  padding: 0 0 24px 0;
-  border-bottom: none;
-}
-
-.table.gradient .header-cell {
-  font-size: 16px;
-  font-weight: 400;
-  color: #6B6B6B;
-}
-
-.table.gradient .row {
-  height: auto;
-  padding: 11px 0;
-}
-
-.table.gradient .cell {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 22px;
-  height: auto;
-  padding: 0;
-}
-
-.table.gradient .icon-btn {
-  font-size: 20px;
-  opacity: 0.6;
-}
-
-.table.gradient .actions {
-  gap: 16px;
-}
+/* ========== CELL LABEL (showLabels mode) ========== */
 
 .cell-label {
   font-size: 12px;
   font-weight: 400;
-  color: #B1B1B1;
+  color: #6B6B6B;
   line-height: 16px;
 }
 
-/* Checkbox */
+/* ========== CHECKBOX ========== */
 
 input[type="checkbox"] {
   width: 16px;
@@ -174,12 +149,23 @@ input[type="checkbox"] {
   accent-color: #33BAEA;
 }
 
-/* Dimmed row */
+/* ========== DIMMED ROW ========== */
+
 .row--dimmed .cell {
   color: #6B6B6B;
 }
 
-/* Border gradient variant */
+/* ========== GRADIENT VARIANT (List of Tests) ========== */
+
+.table.gradient {
+  background: linear-gradient(180deg, rgba(75, 75, 75, 0.2) 0%, rgba(31, 31, 31, 0.2) 100%);
+}
+
+.table.gradient .row {
+  min-height: 64px;
+}
+
+/* ========== BORDER GRADIENT VARIANT ========== */
 
 .table.border-gradient {
   border: 1px solid transparent;
@@ -231,14 +217,14 @@ input[type="checkbox"] {
   flex: 1;
   font-size: 12px;
   font-weight: 400;
-  color: #B1B1B1;
+  color: #6B6B6B;
 }
 
 .card-empty {
   padding: 40px 20px;
   text-align: center;
   font-size: 13px;
-  color: #B1B1B1;
+  color: #6B6B6B;
 }
 
 .card-row {
