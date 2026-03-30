@@ -336,6 +336,17 @@ input[type="checkbox"] {
 /* ========== CARD VARIANT: Red header (Failed Tests) ========== */
 
 .card.card--red-header {
-  background: linear-gradient(180deg, rgba(133, 8, 0, 0.98) 0%, rgba(40, 5, 2, 0.85) 50%, rgba(0, 0, 0, 0.53) 100%);
+  background: linear-gradient(180deg, #850800fa -134.58%, rgb(0 0 0 / 53%) 111.21%);
   height: 318px;
+}
+
+.card.card--red-header .progress-circle {
+  border-color: #c20c0c;
+}
+
+.card.card--red-header .card-row {
+  border-color: #4d4c4c;
+  padding-top: 0;
+  padding-bottom: 9px;
+  margin-bottom: 9px;
 }
