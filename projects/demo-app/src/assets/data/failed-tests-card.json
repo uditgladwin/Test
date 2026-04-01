@@ -1,0 +1,15 @@
+{
+  "columns": [
+    { "key": "test", "label": "Test" },
+    { "key": "testBench", "label": "TestBench" },
+    { "key": "scope", "label": "Scope" },
+    { "key": "progress", "label": "Progress", "type": "progress" }
+  ],
+  "rows": [
+    { "test": "qwrewtry", "testBench": "newRecTestbench", "scope": "", "progress": "100%", "progressStatus": "Failed" },
+    { "test": "qwewtbta", "testBench": "newRecTestbench", "scope": "", "progress": "100%", "progressStatus": "Failed" },
+    { "test": "efggf", "testBench": "newRecTestbench", "scope": "", "progress": "100%", "progressStatus": "Failed" },
+    { "test": "wrwwewrwe", "testBench": "newRecTestbench", "scope": "", "progress": "100%", "progressStatus": "Failed" }
+  ],
+  "statusColors": { "Failed": "#FF3B30" }
+}

@@ -1,0 +1,15 @@
+<button
+  [type]="type"
+  [class]="buttonClasses"
+  [disabled]="isDisabled"
+  (click)="onClick()">
+
+  <span *ngIf="hasIcon && !isLoading" class="btn__icon material-icons">{{ icon }}</span>
+
+  <ng-container *ngIf="isLoading">
+    <img class="btn__loading-icon" src="autorenew.png" alt="Loading" />
+    <span class="btn__label">Loading</span>
+  </ng-container>
+
+  <span *ngIf="!isLoading" class="btn__label">{{ label }}</span>
+</button>

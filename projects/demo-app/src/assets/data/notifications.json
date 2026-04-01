@@ -1,0 +1,42 @@
+{
+  "notifications": [
+    {
+      "id": "notif-001",
+      "title": "Test Name: qwrewtry",
+      "message": "Test execution completed with failures. Please review the results.",
+      "time": "2026-03-29T10:30:00Z",
+      "notificationType": "USER",
+      "possibleActions": ["Dismiss", "View Results"]
+    },
+    {
+      "id": "notif-002",
+      "message": "System maintenance scheduled for tomorrow at 2:00 AM UTC.",
+      "time": "2026-03-29T09:15:00Z",
+      "notificationType": "SYSTEM",
+      "possibleActions": []
+    },
+    {
+      "id": "notif-003",
+      "title": "Test Name: efggf",
+      "message": "Test passed successfully on testbench newRecTestbench.",
+      "time": "2026-03-29T08:45:00Z",
+      "notificationType": "USER",
+      "possibleActions": ["CLEAR"]
+    },
+    {
+      "id": "notif-004",
+      "title": "Test Name: wrwwewrwe",
+      "message": "Test execution failed. Scope validation error detected.",
+      "time": "2026-03-28T16:20:00Z",
+      "notificationType": "USER",
+      "possibleActions": ["Retry", "Cancel"]
+    },
+    {
+      "id": "notif-005",
+      "message": "New firmware update available for TKFWTXS05.",
+      "time": "2026-03-28T14:00:00Z",
+      "notificationType": "SYSTEM",
+      "possibleActions": ["CLEAR"]
+    }
+  ]
+}

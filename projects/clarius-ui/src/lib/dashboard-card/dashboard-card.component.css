@@ -1,0 +1,153 @@
+/* ========== CARD BASE ========== */
+
+.card {
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(75, 75, 75, 0.2) 0%, rgba(31, 31, 31, 0.2) 100%);
+  font-family: "Noto Sans", sans-serif;
+  overflow-y: hidden;
+  height: 300px;
+  padding: 15px 24px 24px 24px;
+  box-sizing: border-box;
+}
+
+.card:hover {
+  overflow-y: auto;
+}
+
+/* Scrollbar styling */
+.card::-webkit-scrollbar {
+  width: 6px;
+}
+
+.card::-webkit-scrollbar-track {
+  background: #424242;
+  box-shadow: inset 0 0 6px rgba(107, 107, 107, 0.3);
+}
+
+.card::-webkit-scrollbar-thumb {
+  background: #B1B1B1;
+  border-radius: 20px;
+  outline: 1px solid slategrey;
+}
+
+/* ========== HEADER ========== */
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 400;
+  color: #6B6B6B;
+}
+
+.card-arrow {
+  font-size: 18px;
+  color: #B1B1B1;
+  cursor: pointer;
+}
+
+.card-arrow:hover {
+  color: #FFFFFF;
+}
+
+/* ========== COLUMN HEADERS ========== */
+
+.card-columns {
+  display: flex;
+  padding: 0 0 18px 0;
+  margin-top: 10px;
+}
+
+.card-col-header {
+  flex: 1;
+  font-size: 10.5px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #6B6B6B;
+}
+
+/* ========== EMPTY STATE ========== */
+
+.card-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  opacity: 0.6;
+}
+
+/* ========== ROWS ========== */
+
+.card-row {
+  display: flex;
+  align-items: center;
+  padding: 11.5px 0;
+  border-bottom: 1px solid #4d4c4c;
+  cursor: pointer;
+}
+
+.card-row:last-child {
+  border-bottom: none;
+}
+
+.card-row:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* ========== CELLS ========== */
+
+.card-cell {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  color: #FFFFFF;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-right: 16px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.link-text {
+  color: #33BAEA;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 12px;
+  text-align: right;
+  text-transform: uppercase;
+  padding-right: 0;
+}
+
+.link-text:hover {
+  text-decoration: underline;
+}
+
+.progress-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid #6B6B6B;
+  font-size: 10px;
+  font-weight: 700;
+  color: #FFFFFF;
+}

@@ -1,0 +1,116 @@
+<h1>Clarius Table Demo</h1>
+
+<h2>Sequences</h2>
+<clarius-table
+  [columns]="sequenceTable.columns"
+  [rows]="sequenceTable.rows"
+  [actions]="sequenceTable.actions"
+  (rowClicked)="onRowClick($event)"
+  (actionClicked)="onActionClick($event)">
+</clarius-table>
+
+<h2>Applications</h2>
+<clarius-table
+  [columns]="applicationTable.columns"
+  [rows]="applicationTable.rows"
+  (rowClicked)="onRowClick($event)">
+</clarius-table>
+
+<h2>Test Benches</h2>
+<clarius-table
+  [columns]="testbenchTable.columns"
+  [rows]="testbenchTable.rows"
+  [actions]="testbenchTable.actions"
+  [statusColors]="testbenchTable.statusColors"
+  [lightWeight]="true"
+  (rowClicked)="onRowClick($event)"
+  (actionClicked)="onActionClick($event)">
+</clarius-table>
+
+<h2>Reports</h2>
+<clarius-table
+  [columns]="reportTable.columns"
+  [rows]="reportTable.rows"
+  [actions]="reportTable.actions"
+  [gradient]="true"
+  [borderGradient]="true"
+  [largeText]="true"
+  (rowClicked)="onRowClick($event)"
+  (actionClicked)="onActionClick($event)">
+</clarius-table>
+
+<h2>List of Tests</h2>
+<clarius-table
+  [columns]="testTable.columns"
+  [rows]="testTable.rows"
+  [actions]="testTable.actions"
+  [statusColors]="testTable.statusColors"
+  [gradient]="true"
+  [borderGradient]="true"
+  (rowClicked)="onRowClick($event)"
+  (actionClicked)="onActionClick($event)"
+  (selectionChanged)="onSelectionChange($event)">
+</clarius-table>
+
+<clarius-dashboard
+  greeting="Hi admin"
+  actionLabel="Run Test"
+  (actionClicked)="onActionClick({ action: 'runTest', row: null })">
+
+  <clarius-notification-card
+    [notifications]="notifications"
+    (clearAllClicked)="onClearAllNotifications()"
+    (itemClosed)="onNotificationClosed($event)"
+    (actionClicked)="onNotificationAction($event)">
+  </clarius-notification-card>
+
+  <clarius-table
+    mode="card"
+    title="Sequences"
+    [headerLink]="true"
+    [columns]="sequenceCard.columns"
+    [rows]="sequenceCard.rows"
+    (headerClicked)="onHeaderClick('sequences')"
+    (linkClicked)="onLinkClick($event)">
+  </clarius-table>
+
+  <clarius-table
+    mode="card"
+    title="Running Tests"
+    emptyMessage="No Tests Are Running">
+  </clarius-table>
+
+  <clarius-table
+    mode="card"
+    title="Test Benches"
+    [headerLink]="true"
+    [columns]="testBenchCard.columns"
+    [rows]="testBenchCard.rows"
+    [statusColors]="testBenchCard.statusColors"
+    (headerClicked)="onHeaderClick('testbenches')">
+  </clarius-table>
+
+  <clarius-table
+    mode="card"
+    title="Failed Tests"
+    [headerLink]="true"
+    cardVariant="red-header"
+    [showColumnHeaders]="true"
+    [columns]="failedTestCard.columns"
+    [rows]="failedTestCard.rows"
+    [statusColors]="failedTestCard.statusColors"
+    (headerClicked)="onHeaderClick('failed-tests')">
+  </clarius-table>
+
+  <clarius-table
+    mode="card"
+    title="Applications"
+    [headerLink]="true"
+    [columns]="appCard.columns"
+    [rows]="appCard.rows"
+    (headerClicked)="onHeaderClick('applications')"
+    (linkClicked)="onLinkClick($event)">
+  </clarius-table>
+
+</clarius-dashboard>
+

@@ -1,0 +1,23 @@
+{
+  "columns": [
+    { "key": "reportName", "label": "Report Name", "flex": "25" },
+    { "key": "testName", "label": "Test Name", "flex": "20" },
+    { "key": "applications", "label": "Applications", "flex": "25" },
+    { "key": "createdOn", "label": "Created On", "flex": "15" },
+    { "key": "actions", "label": "", "type": "actions", "flex": "30" }
+  ],
+  "rows": [
+    { "reportName": "testing", "testName": "dontDelete3", "applications": "TKFWTXS04", "createdOn": "Feb 24, 10:01:09", "status": "PASS" },
+    { "reportName": "AshokTesting", "testName": "Run_02", "applications": "TKFWTXS04", "createdOn": "Feb 13, 17:16:29", "status": "PASS" },
+    { "reportName": "test_check", "testName": "test_18", "applications": "TKFWTXS04", "createdOn": "Jan 19, 18:22:23", "status": "PASS" },
+    { "reportName": "dssdsdsd", "testName": "test_plots_2", "applications": "TKFWTXS08", "createdOn": "Dec 09, 14:49:42", "status": "PASS" },
+    { "reportName": "sdssdssdworking", "testName": "sampleusb", "applications": "TKFWTXS06", "createdOn": "Dec 04, 22:54:57", "status": "PASS" },
+    { "reportName": "sdssdssd56", "testName": "sampleusb", "applications": "TKFWTXS06", "createdOn": "Dec 04, 22:50:05", "status": "FAIL" },
+    { "reportName": "sdssdssd", "testName": "sampleusb", "applications": "TKFWTXS06", "createdOn": "Dec 04, 22:48:37", "status": "PASS" }
+  ],
+  "actions": [
+    { "id": "delete", "label": "", "icon": "assets/icons/delete.png" },
+    { "id": "view", "label": "View", "primaryField": "status", "primaryValue": "PASS" }
+  ],
+  "statusColors": {}
+}

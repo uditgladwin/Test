@@ -1,0 +1,352 @@
+/* ========== BASE TABLE ========== */
+
+.table {
+  border: 1px solid #303030;
+  border-radius: 10px;
+  background: #161616;
+  padding: 24px;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.header {
+  display: flex;
+  padding: 0 0 24px 0;
+  border-bottom: 1px solid #303030;
+}
+
+.header-cell {
+  flex: 1;
+  font-size: 12px;
+  font-weight: 400;
+  color: #6B6B6B;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  min-height: 56px;
+  border-bottom: 1px solid #303030;
+  cursor: pointer;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.row:hover {
+  background: #1e1e1e;
+}
+
+.cell {
+  flex: 1;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  color: #FFFFFF;
+  padding: 13px 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* Light weight variant (Testbench / Instrument Services) */
+.table.light-weight .cell {
+  font-weight: 400;
+}
+
+/* ========== STATUS BADGES ========== */
+
+.badge {
+  display: inline-block;
+  text-align: center;
+  width: 168px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 12px;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+}
+
+/* Status dot */
+.status-dot-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ========== ACTIONS ========== */
+
+.col-actions {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.col-checkbox {
+  flex: 0 0 40px;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.actions clarius-button {
+  display: inline-block;
+}
+
+.icon-btn {
+  width: 24px;
+  height: 24px;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.icon-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.icon-btn:hover {
+  opacity: 0.7;
+}
+
+/* ========== CELL LABEL (showLabels mode) ========== */
+
+.cell-label {
+  font-size: 12px;
+  font-weight: 400;
+  color: #6B6B6B;
+  line-height: 16px;
+}
+
+/* ========== CHECKBOX ========== */
+
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #33BAEA;
+}
+
+/* ========== DIMMED ROW ========== */
+
+.row--dimmed .cell {
+  color: #5B5B5B;
+}
+
+/* ========== GRADIENT VARIANT (List of Tests) ========== */
+
+.table.gradient {
+  background: linear-gradient(180deg, rgba(75, 75, 75, 0.2) 0%, rgba(31, 31, 31, 0.2) 100%);
+}
+
+.table.gradient .row {
+  min-height: 64px;
+}
+
+/* ========== LARGE TEXT VARIANT (Reports) ========== */
+
+.table.large-text .header-cell {
+  font-size: 16px;
+}
+
+.table.large-text .cell {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.table.large-text .row {
+  min-height: auto;
+  padding: 11px 0;
+}
+
+/* ========== BORDER GRADIENT VARIANT ========== */
+
+.table.border-gradient {
+  border: 1px solid transparent;
+  border-image-source: linear-gradient(180deg, rgba(56, 56, 56, 0) 0%, #222222 100%);
+  border-image-slice: 1;
+}
+
+/* ========== CARD MODE ========== */
+
+.card {
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(75, 75, 75, 0.2) 0%, rgba(31, 31, 31, 0.2) 100%);
+  font-family: "Noto Sans", sans-serif;
+  overflow-y: hidden;
+  height: 300px;
+  padding: 15px 24px 24px 24px;
+  box-sizing: border-box;
+}
+
+.card:hover {
+  overflow-y: auto;
+}
+
+/* Scrollbar styling */
+.card::-webkit-scrollbar {
+  width: 6px;
+}
+
+.card::-webkit-scrollbar-track {
+  background: #424242;
+  box-shadow: inset 0 0 6px rgba(107, 107, 107, 0.3);
+}
+
+.card::-webkit-scrollbar-thumb {
+  background: #B1B1B1;
+  border-radius: 20px;
+  outline: 1px solid slategrey;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 400;
+  color: #6B6B6B;
+}
+
+.card-arrow {
+  font-size: 18px;
+  color: #B1B1B1;
+  cursor: pointer;
+}
+
+.card-arrow:hover {
+  color: #FFFFFF;
+}
+
+.card-columns {
+  display: flex;
+  padding: 0 0 18px 0;
+  margin-top: 10px;
+}
+
+.card-col-header {
+  flex: 1;
+  font-size: 10.5px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #6B6B6B;
+}
+
+.card-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  opacity: 0.6;
+}
+
+.card-row {
+  display: flex;
+  align-items: center;
+  padding: 11.5px 0;
+  border-bottom: 1px solid #4d4c4c;
+  cursor: pointer;
+}
+
+.card-row:last-child {
+  border-bottom: none;
+}
+
+.card-row:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.card-cell {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  color: #FFFFFF;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-right: 16px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.link-text {
+  color: #33BAEA;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 12px;
+  text-align: right;
+  text-transform: uppercase;
+  padding-right: 0;
+}
+
+.link-text:hover {
+  text-decoration: underline;
+}
+
+.progress-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid #6B6B6B;
+  font-size: 10px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+/* ========== CARD VARIANT: Red header (Failed Tests) ========== */
+
+.card.card--red-header {
+  background: linear-gradient(180deg, #850800fa -134.58%, rgb(0 0 0 / 53%) 111.21%);
+  height: 318px;
+}
+
+.card.card--red-header .progress-circle {
+  border-color: #c20c0c;
+}
+
+.card.card--red-header .card-row {
+  border-color: #4d4c4c;
+  padding-top: 0;
+  padding-bottom: 9px;
+  margin-bottom: 9px;
+}
