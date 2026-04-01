@@ -4,6 +4,7 @@ export interface TableColumn {
   type?: 'text' | 'status' | 'status-text' | 'status-dot' | 'actions' | 'checkbox' | 'dot' | 'link' | 'progress';
   textColor?: string;
   linkText?: string;
+  flex?: string;
 }
 
 export interface TableAction {

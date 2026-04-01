@@ -1,10 +1,10 @@
 {
   "columns": [
-    { "key": "reportName", "label": "Report Name" },
-    { "key": "testName", "label": "Test Name" },
-    { "key": "applications", "label": "Applications" },
-    { "key": "createdOn", "label": "Created On" },
-    { "key": "actions", "label": "", "type": "actions" }
+    { "key": "reportName", "label": "Report Name", "flex": "25" },
+    { "key": "testName", "label": "Test Name", "flex": "20" },
+    { "key": "applications", "label": "Applications", "flex": "25" },
+    { "key": "createdOn", "label": "Created On", "flex": "15" },
+    { "key": "actions", "label": "", "type": "actions", "flex": "30" }
   ],
   "rows": [
     { "reportName": "testing", "testName": "dontDelete3", "applications": "TKFWTXS04", "createdOn": "Feb 24, 10:01:09", "status": "PASS" },
