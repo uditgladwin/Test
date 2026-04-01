@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { TableModule, ButtonModule, DashboardModule, ClariusDataModule } from 'clarius-ui';
+import { TableModule, ButtonModule, DashboardModule, ClariusDataModule, NotificationCardModule } from 'clarius-ui';
 
 import { AppComponent } from './app.component';
 
@@ -13,7 +13,8 @@ import { AppComponent } from './app.component';
     TableModule,
     ButtonModule,
     DashboardModule,
-    ClariusDataModule
+    ClariusDataModule,
+    NotificationCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

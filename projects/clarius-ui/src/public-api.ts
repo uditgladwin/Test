@@ -8,3 +8,6 @@ export * from './lib/dashboard/dashboard.module';
 export * from './lib/dashboard/dashboard.component';
 export * from './lib/services/clarius-data.service';
 export * from './lib/services/clarius-data.module';
+export * from './lib/notification/notification.module';
+export * from './lib/notification/notification.component';
+export * from './lib/notification/notification.model';

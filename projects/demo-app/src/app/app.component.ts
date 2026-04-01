@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TableColumn, ClariusDataService } from 'clarius-ui';
+import { TableColumn, ClariusDataService, NotificationItem } from 'clarius-ui';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +20,9 @@ export class AppComponent implements OnInit {
   testBenchCard: any = { columns: [], rows: [], statusColors: {} };
   failedTestCard: any = { columns: [], rows: [], statusColors: {} };
   appCard: any = { columns: [], rows: [], statusColors: {} };
+
+  // --- Notification card data ---
+  notifications: NotificationItem[] = [];
 
   constructor(private dataService: ClariusDataService) {}
 
@@ -52,6 +55,10 @@ export class AppComponent implements OnInit {
 
     this.dataService.fetch({ url: 'assets/data/applications-card.json' })
       .subscribe(data => this.appCard = data);
+
+    // Load notification data from API
+    this.dataService.fetch({ url: 'assets/data/notifications.json' })
+      .subscribe((data: any) => this.notifications = data.notifications || []);
   }
 
   // --- Events ---
@@ -74,5 +81,20 @@ export class AppComponent implements OnInit {
 
   onLinkClick(event: any) {
     console.log('Link clicked:', event);
+  }
+
+  onClearAllNotifications() {
+    console.log('Clear all notifications');
+    this.notifications = [];
+  }
+
+  onNotificationClosed(event: { id: string }) {
+    console.log('Notification closed:', event);
+    this.notifications = this.notifications.filter(n => n.id !== event.id);
+  }
+
+  onNotificationAction(event: { id: string; action: string }) {
+    console.log('Notification action:', event);
+    this.notifications = this.notifications.filter(n => n.id !== event.id);
   }
 }

@@ -57,11 +57,12 @@
   actionLabel="Run Test"
   (actionClicked)="onActionClick({ action: 'runTest', row: null })">
 
-  <clarius-table
-    mode="card"
-    title="Notifications"
-    emptyMessage="There are no notifications to display.">
-  </clarius-table>
+  <clarius-notification-card
+    [notifications]="notifications"
+    (clearAllClicked)="onClearAllNotifications()"
+    (itemClosed)="onNotificationClosed($event)"
+    (actionClicked)="onNotificationAction($event)">
+  </clarius-notification-card>
 
   <clarius-table
     mode="card"

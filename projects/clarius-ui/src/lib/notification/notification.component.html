@@ -1,0 +1,62 @@
+<div class="notification-card">
+
+  <!-- Header -->
+  <div class="notification-header" [class.has-notifications]="hasNotifications">
+    <span class="notification-title">Notifications</span>
+    <span *ngIf="hasNotifications" class="clear-all" (click)="onClearAll()">CLEAR ALL</span>
+  </div>
+
+  <!-- Empty state -->
+  <div class="empty-state" *ngIf="!hasNotifications">
+    {{ emptyMessage }}
+  </div>
+
+  <!-- Notification list -->
+  <div *ngIf="hasNotifications" class="notification-list" [class.has-scrollbar]="hasNotifications">
+    <div *ngFor="let notif of notifications; let isLast = last">
+
+      <div class="notify-item">
+        <!-- Check icon -->
+        <div class="notify-icon">
+          <span class="check-icon">&#10003;</span>
+        </div>
+
+        <!-- Content area -->
+        <div class="notify-content">
+
+          <!-- Title row -->
+          <div class="notify-title-row" *ngIf="notif.title && !isSystemType(notif)">
+            <span class="notify-title">{{ notif.title }}</span>
+                  <span *ngIf="isCloseable(notif) && !isSystemType(notif)"
+                    class="close-icon" (click)="onCloseItem(notif)">&times;</span>
+          </div>
+
+          <!-- Message row -->
+          <div class="notify-message-row">
+            <span class="notify-message">{{ notif.message }}</span>
+                  <span *ngIf="isCloseable(notif) && (isSystemType(notif) || !notif.title)"
+                    class="close-icon" (click)="onCloseItem(notif)">&times;</span>
+          </div>
+
+          <!-- Time -->
+          <div class="notify-time" *ngIf="notif.time">
+            {{ getTimeDisplay(notif.time) }}
+          </div>
+
+          <!-- Action buttons -->
+          <div class="notify-actions" *ngIf="hasActions(notif)">
+            <button *ngFor="let action of notif.possibleActions; let isLastAction = last"
+              class="notify-btn" [class.notify-btn-fill]="isLastAction"
+              (click)="onActionClick(notif, action)">
+              {{ action }}
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="notify-divider" *ngIf="!isLast"></div>
+    </div>
+  </div>
+
+</div>
